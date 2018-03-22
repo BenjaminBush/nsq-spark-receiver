@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.github.brainlag:nsq-client:1.0.0.RC4:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.github.brainlag/nsq-client/jars/nsq-client-1.0.0.RC4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.github.brainlag/nsq-client/srcs/nsq-client-1.0.0.RC4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
