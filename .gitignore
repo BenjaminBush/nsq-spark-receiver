@@ -1,2 +1,3 @@
 *.jar
 *.swp
+**/target/streams/
