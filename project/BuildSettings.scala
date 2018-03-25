@@ -1,12 +1,13 @@
 import sbt._
 import Keys._
+import com.typesafe.config.Config
 
 object BuildSettings {
 
   // Basic settings for our app
   lazy val basicSettings = Seq(
     organization          :=  "com.ben.streaming",
-    scalaVersion          :=  "2.10.6",
+    scalaVersion          :=  "2.11.0",
     scalacOptions         :=  compilerOptions,
     javacOptions          :=  javaCompilerOptions,
     resolvers             +=  Resolver.jcenterRepo
@@ -46,21 +47,5 @@ object BuildSettings {
       Seq(file)
     }.taskValue
   )
-
   lazy val buildSettings = basicSettings ++ scalifySettings
-
-  // sbt-assembly settings for building a fat jar
-  import sbtassembly.AssemblyPlugin.autoImport._
-  lazy val sbtAssemblySettings = Seq(
-    assemblyJarName in assembly := { s"${name.value}-${version.value}.jar" },
-    assemblyMergeStrategy in assembly := {
-      case PathList("org", "apache", xs @ _*) => MergeStrategy.last
-      case PathList("org", "aopalliance", xs @ _*) => MergeStrategy.last
-      case PathList("javax", "inject", xs @ _*) => MergeStrategy.last
-      case "overview.html" => MergeStrategy.last
-      case x =>
-        val oldStrategy = (assemblyMergeStrategy in assembly).value
-        oldStrategy(x)
-    }
-  )
 }

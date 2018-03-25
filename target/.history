@@ -1,3 +1,10 @@
-assets
+compile
+sbt update
+update
+clean compile run
+clean
+compile
+clean
+assembly
 compile
 assembly
