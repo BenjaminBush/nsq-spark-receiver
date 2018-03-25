@@ -9,16 +9,10 @@ import com.github.brainlag.nsq.callbacks.NSQMessageCallback
 import com.github.brainlag.nsq.callbacks.NSQErrorCallback
 import com.github.brainlag.nsq.exceptions.NSQException
 
-// Java
-import java.io.{BufferedReader, InputStreamReader}
-import java.net.Socket
-import java.nio.charset.StandardCharsets
 
 // Spark
-import org.apache.spark.SparkConf
 import org.apache.spark.internal.Logging
 import org.apache.spark.storage.StorageLevel
-import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.streaming.receiver.Receiver
 
 // This project
@@ -55,7 +49,7 @@ class NsqReceiver(nsqConfig: NsqConfig)
     consumer
   }
 
-  def onStart() {
+  def onStart()  : Unit = {
     if (consumer == null) {
       consumer = createConsumer()
       consumer.start()
@@ -66,7 +60,7 @@ class NsqReceiver(nsqConfig: NsqConfig)
 
   }
 
-  def onStop() {
+  def onStop() : Unit = {
     if (consumer != null){
       consumer.close()
       consumer = null

@@ -4,7 +4,7 @@
 		module="nsq-spark-receiver-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20180322102239"
+		publication="20180323123123"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
@@ -42,7 +42,7 @@
 			<artifact name="global-plugins" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 			<artifact name="global-plugins" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 		</dependency>
-		<dependency org="com.eed3si9n" name="sbt-assembly" rev="0.14.4" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
 		<dependency org="net.virtual-void" name="sbt-dependency-graph" rev="0.9.0" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
+		<dependency org="com.eed3si9n" name="sbt-assembly" rev="0.14.6" conf="compile->default(compile)" e:sbtVersion="0.13" e:scalaVersion="2.10"/>
 	</dependencies>
 </ivy-module>

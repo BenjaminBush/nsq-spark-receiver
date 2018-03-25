@@ -1,22 +1,21 @@
 lazy val root = project.in(file("."))
   .settings(
     name        := "nsq-spark-receiver",
-    version     := "0.1.0",
+    version     := "1.0.2",
     description := "Example project for NSQ-Spark integration"
   )
   .settings(BuildSettings.buildSettings)
-  .settings(BuildSettings.sbtAssemblySettings)
   .settings(
     libraryDependencies ++= Seq(
       Dependencies.Libraries.sparkSql,
       Dependencies.Libraries.sparkStreaming,
       Dependencies.Libraries.nsqClient,
       Dependencies.Libraries.scopt,
-      Dependencies.Libraries.config,
-      Dependencies.Libraries.pureconfig,
-      Dependencies.Libraries.specs2,
-      Dependencies.Libraries.jacksonCore,
-      Dependencies.Libraries.jacksonDatabind
+      Dependencies.Libraries.config
+//      Dependencies.Libraries.pureconfig
+//      Dependencies.Libraries.specs2,
+//      Dependencies.Libraries.jacksonCore,
+//      Dependencies.Libraries.jacksonDatabind
     )
   )
 assemblyMergeStrategy in assembly := {

@@ -1,15 +1,10 @@
 package com.ben.streaming.spark
 
 // Spark
-import org.apache.spark.sql.SparkSession
 import org.apache.spark.SparkConf
-import org.apache.spark.internal.Logging
-import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming.{Seconds, StreamingContext}
-import org.apache.spark.streaming.receiver.Receiver
 
 //Java
-import java.nio.charset.StandardCharsets.UTF_8
 import java.io.{FileWriter, File}
 
 // This project
@@ -17,7 +12,7 @@ import model._
 
 object WordCount {
 
-  private def writeToFile(str: String, filePath: String) {
+  private def writeToFile(str: String, filePath: String) : Unit = {
     val inWriter = new FileWriter(filePath, true)
     inWriter.write(str)
     inWriter.close()
@@ -48,11 +43,11 @@ object WordCount {
     ssc
   }
 
-  def awaitTermination(ssc: StreamingContext) {
+  def awaitTermination(ssc: StreamingContext) : Unit = {
     ssc.awaitTermination()
   }
 
-  def awaitTerminationOrTimeout(ssc: StreamingContext, timeout: Long) {
+  def awaitTerminationOrTimeout(ssc: StreamingContext, timeout: Long) : Unit = {
     ssc.awaitTerminationOrTimeout(timeout)
   }
 }
