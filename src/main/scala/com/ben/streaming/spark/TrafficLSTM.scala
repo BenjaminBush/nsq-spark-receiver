@@ -1,11 +1,15 @@
 package com.ben.streaming.spark
 
+// DL4J and ND4J
+//import org.deeplearning4j.conf.MultiLayerConfiguration
+
+
 // Spark
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 //Java
-import java.io.{FileWriter, File}
+import java.io.{FileWriter}
 
 // This project
 import model._

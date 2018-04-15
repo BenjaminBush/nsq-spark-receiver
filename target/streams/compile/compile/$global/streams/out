@@ -1,40 +1,16 @@
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/model.scala:3:12: object typesafe is not a member of package com[0m
-[0m[[0m[31merror[0m] [0m[0mimport com.typesafe.config.Config[0m
-[0m[[0m[31merror[0m] [0m[0m           ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/model.scala:15:36: not found: type Config[0m
-[0m[[0m[31merror[0m] [0m[0m  case class SimpleAppConfig(conf: Config) {[0m
-[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/WordCountJob.scala:20:12: object typesafe is not a member of package com[0m
-[0m[[0m[31merror[0m] [0m[0mimport com.typesafe.config._[0m
-[0m[[0m[31merror[0m] [0m[0m           ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/WordCountJob.scala:29:22: not found: value scopt[0m
-[0m[[0m[31merror[0m] [0m[0m    val parser = new scopt.OptionParser[FileConfig]("nsq-spark-receiver") {[0m
-[0m[[0m[31merror[0m] [0m[0m                     ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/WordCountJob.scala:29:28: too many arguments for constructor Object: ()Object[0m
-[0m[[0m[31merror[0m] [0m[0m    val parser = new scopt.OptionParser[FileConfig]("nsq-spark-receiver") {[0m
-[0m[[0m[31merror[0m] [0m[0m                           ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/WordCountJob.scala:30:7: not found: value head[0m
-[0m[[0m[31merror[0m] [0m[0m      head("nsq-spark-receiver", "1.0.2")[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala:42:15: not found: value TrafficLSTM[0m
+[0m[[0m[31merror[0m] [0m[0m    val ssc = TrafficLSTM.execute([0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala:43:7: not found: value master[0m
+[0m[[0m[31merror[0m] [0m[0m      master = None,[0m
 [0m[[0m[31merror[0m] [0m[0m      ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/WordCountJob.scala:31:7: not found: value opt[0m
-[0m[[0m[31merror[0m] [0m[0m      opt[File]("config").required().valueName("<filename>")[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala:44:14: reassignment to val[0m
+[0m[[0m[31merror[0m] [0m[0m      config = config,[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala:45:7: not found: value jars[0m
+[0m[[0m[31merror[0m] [0m[0m      jars   = List(SparkContext.jarOfObject(this).get)[0m
 [0m[[0m[31merror[0m] [0m[0m      ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/WordCountJob.scala:34:25: not found: value success[0m
-[0m[[0m[31merror[0m] [0m[0m          if (f.exists) success[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/WordCountJob.scala:35:16: not found: value failure[0m
-[0m[[0m[31merror[0m] [0m[0m          else failure(s"Configuration file $f does not exist")[0m
-[0m[[0m[31merror[0m] [0m[0m               ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/WordCountJob.scala:39:23: value parse is not a member of AnyRef[0m
-[0m[[0m[31merror[0m] [0m[0m    val conf = parser.parse(args, FileConfig()) match {[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/WordCountJob.scala:40:23: not found: value ConfigFactory[0m
-[0m[[0m[31merror[0m] [0m[0m      case Some(c) => ConfigFactory.parseFile(c.config).resolve()[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/WordCountJob.scala:40:49: value config is not a member of Any[0m
-[0m[[0m[31merror[0m] [0m[0m      case Some(c) => ConfigFactory.parseFile(c.config).resolve()[0m
-[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/WordCountJob.scala:41:23: not found: value ConfigFactory[0m
-[0m[[0m[31merror[0m] [0m[0m      case None    => ConfigFactory.empty()[0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0m13 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala:48:5: not found: value TrafficLSTM[0m
+[0m[[0m[31merror[0m] [0m[0m    TrafficLSTM.awaitTermination(ssc)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m

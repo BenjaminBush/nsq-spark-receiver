@@ -11,9 +11,10 @@ lazy val root = project.in(file("."))
       Dependencies.Libraries.sparkStreaming,
       Dependencies.Libraries.nsqClient,
       Dependencies.Libraries.scopt,
-      Dependencies.Libraries.config
-//      "org.deeplearning4j" % "deeplearning4j-core" % "0.9.2-SNAPSHOT",
-//      "org.nd4j" %"nd4j-native" % "0.9.2-SNAPSHOT" % "test"
+      Dependencies.Libraries.config,
+      "org.deeplearning4j" % "scalnet_2.11" % "0.9.2-SNAPSHOT",
+      "org.deeplearning4j" % "deeplearning4j-core" % "0.9.2-SNAPSHOT",
+      "org.nd4j" %"nd4j-native" % "0.9.2-SNAPSHOT" % "test"
     )
   )
 
