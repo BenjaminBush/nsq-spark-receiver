@@ -1,8 +1,8 @@
 package com.ben.streaming.spark
 
 // DL4J and ND4J
-//import org.deeplearning4j.conf.MultiLayerConfiguration
-
+import org.deeplearning4j.nn.modelimport.keras.KerasModelImport
+import org.deeplearning4j.nn.multilayer.MultiLayerNetwork
 
 // Spark
 import org.apache.spark.SparkConf
@@ -29,6 +29,11 @@ object TrafficLSTM {
       sparkConf.setMaster(m)
     }
     val ssc = new StreamingContext(sparkConf, Seconds(config.batchDuration))
+
+    val h5path = "data/model.h5"
+    val lstm = KerasModelImport.importKerasSequentialModelAndWeights(h5path)
+
+
 
     val lines = ssc.receiverStream(new NsqReceiver(config.nsq))
     val words = lines.flatMap(_.split(" "))
