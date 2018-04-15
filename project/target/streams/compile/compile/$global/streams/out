@@ -1,0 +1,4 @@
+[error] /home/ben/git/nsq-spark-receiver/project/Dependencies.scala:21:3: illegal start of simple pattern
+[error]   }
+[error]   ^
+[error] one error found

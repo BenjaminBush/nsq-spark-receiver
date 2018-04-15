@@ -4,7 +4,7 @@
 		module="nsq-spark-receiver_2.11"
 		revision="1.0.2"
 		status="integration"
-		publication="20180323144152"
+		publication="20180415145642"
 	>
 		<description>
 		Example project for NSQ-Spark integration

@@ -1,8 +1,8 @@
 lazy val root = project.in(file("."))
   .settings(
     name        := "nsq-spark-receiver",
-    version     := "1.0.2",
-    description := "Example project for NSQ-Spark integration"
+    version     := "1.0.3",
+    description := "Project for NSQ-Spark integration"
   )
   .settings(BuildSettings.buildSettings)
   .settings(
@@ -12,12 +12,12 @@ lazy val root = project.in(file("."))
       Dependencies.Libraries.nsqClient,
       Dependencies.Libraries.scopt,
       Dependencies.Libraries.config
-//      Dependencies.Libraries.pureconfig
-//      Dependencies.Libraries.specs2,
-//      Dependencies.Libraries.jacksonCore,
-//      Dependencies.Libraries.jacksonDatabind
+//      "org.deeplearning4j" % "deeplearning4j-core" % "0.9.2-SNAPSHOT",
+//      "org.nd4j" %"nd4j-native" % "0.9.2-SNAPSHOT" % "test"
     )
   )
+
+resolvers in ThisBuild ++= Seq(Opts.resolver.sonatypeSnapshots)
 assemblyMergeStrategy in assembly := {
   case PathList("org","aopalliance", xs @ _*) => MergeStrategy.last
   case PathList("javax", "inject", xs @ _*) => MergeStrategy.last
