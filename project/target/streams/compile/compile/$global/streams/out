@@ -1,4 +1,4 @@
-[error] /home/ben/git/nsq-spark-receiver/project/Dependencies.scala:21:3: illegal start of simple pattern
-[error]   }
-[error]   ^
+[error] /home/ben/git/nsq-spark-receiver/project/Dependencies.scala:21:77: ';' expected but ',' found.
+[error]     val nd4jNativePlatform = "org.nd4j" % "nd4j-native-platform" % V.dl4jVer,
+[error]                                                                             ^
 [error] one error found

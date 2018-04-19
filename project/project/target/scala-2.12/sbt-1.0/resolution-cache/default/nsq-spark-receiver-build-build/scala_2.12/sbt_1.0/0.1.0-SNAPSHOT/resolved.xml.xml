@@ -4,7 +4,7 @@
 		module="nsq-spark-receiver-build-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20180415160148"
+		publication="20180418154315"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>
