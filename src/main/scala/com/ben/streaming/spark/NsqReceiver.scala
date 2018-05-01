@@ -41,11 +41,11 @@ class NsqReceiver(nsqConfig: NsqConfig)
     // use NSQLookupd
     lookup.addLookupAddress(nsqConfig.host, nsqConfig.lookupPort)
     val consumer = new NSQConsumer(lookup,
-                                   nsqConfig.inTopicName,
-                                   nsqConfig.channelName,
-                                   nsqCallback,
-                                   new NSQConfig(),
-                                   errorCallback)
+      nsqConfig.inTopicName,
+      nsqConfig.channelName,
+      nsqCallback,
+      new NSQConfig(),
+      errorCallback)
     consumer
   }
 

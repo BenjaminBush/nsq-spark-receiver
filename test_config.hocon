@@ -1,7 +1,7 @@
 appName: "nsq-app"
 
 # the time interval at which streaming data will be divided into batches
-batchDuration: 5
+batchDuration: 1
 
 outputFile : "/tmp/spark-output"
 

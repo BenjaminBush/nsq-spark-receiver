@@ -8,6 +8,7 @@ lazy val root = project.in(file("."))
   .settings(
     libraryDependencies ++= Seq(
       Dependencies.Libraries.sparkSql,
+      Dependencies.Libraries.sparkmllib,
       Dependencies.Libraries.sparkStreaming,
       Dependencies.Libraries.nsqClient,
       Dependencies.Libraries.scopt,
