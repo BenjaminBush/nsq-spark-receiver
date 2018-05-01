@@ -2,13 +2,18 @@ package com.ben.streaming.spark
 
 // DL4J and ND4J
 import org.apache.spark.sql.DataFrame
+import org.apache.spark.util.AccumulatorV2
 import org.deeplearning4j.nn.modelimport.keras.KerasModelImport
 import org.nd4s._
 import org.nd4j.linalg.factory.Nd4j
 import org.nd4s.Implicits._
 
+import scala.collection.immutable.Queue
+import scala.collection.mutable.ArrayBuffer
+
 // Spark
 import org.apache.spark.SparkConf
+import org.apache.spark.util.AccumulatorV2
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.mllib.linalg.{Vectors, Vector}
 import org.apache.spark.rdd.RDD
@@ -24,6 +29,40 @@ import scala.collection.mutable.ListBuffer
 // This project
 import model._
 
+class ArrayAccumulator extends AccumulatorV2[Array[Double], Array[Double]] {
+  private val myArray : Array[Double] = Array.emptyDoubleArray
+
+  def reset() : Unit = {
+    for (i <- 0 until myArray.length) {
+      myArray(i) = 0
+    }
+  }
+
+  override def isZero: Boolean = {
+    false
+  }
+
+  override def copy(): AccumulatorV2[Array[Double], Array[Double]] = {
+    val c = new Array[Double](myArray.length)
+    for (i <- 0 until myArray.length) {
+      c(i) = myArray(i)
+    }
+    return this
+  }
+
+  override def add(v: Array[Double]): Unit = {
+    myArray ++ v
+  }
+
+  override def merge(other: AccumulatorV2[Array[Double], Array[Double]]): Unit = {
+    myArray++other.value
+  }
+
+  override def value: Array[Double] = {
+    myArray
+  }
+}
+
 object TrafficLSTM {
 
   private def writeToFile(str: String, filePath: String) : Unit = {
@@ -32,54 +71,100 @@ object TrafficLSTM {
     inWriter.close()
 
   }
+
+  def parseDouble(s: String) = try { Some(s.toDouble) } catch { case _:Throwable => None }
+
   def execute(master: Option[String], config: SimpleAppConfig, jars: Seq[String] = Nil): StreamingContext = {
 
     val sparkConf = new SparkConf().setAppName(config.appName).setJars(jars)
     for (m <- master) {
       sparkConf.setMaster(m)
     }
+
+    val myacc = new ArrayAccumulator
+
     val ssc = new StreamingContext(sparkConf, Seconds(config.batchDuration))
+
+    ssc.sparkContext.register(myacc, "my accumulator")
 
     val h5path = "/home/ben/Notebooks/lstm_model.h5"
     val lstm = KerasModelImport.importKerasSequentialModelAndWeights(h5path)
     val x_bar = 66.89326132
     val sigma = 40.9970568283
-
+    val scale = 0.00507614
+    val lag = 12
 
     val input = ssc.receiverStream(new NsqReceiver(config.nsq))
-    val flows = input.map(x => (x.split(" "))).map(numbers => Vectors.dense(numbers.map(_.toDouble))(0))
-    val flows2 = flows
-    val flow_preds = flows.map(flow => lstm.rnnTimeStep(Array(flow.toInt).asNDArray(1, 1)))
-    val scaled_flow_preds = flow_preds.map(pred => pred*sigma + x_bar)
+    input.print(lag)
 
-    val predictions = flows2.map(flow => lstm.output((Array(flow.toInt)).asNDArray(1,1)))
+    // This works:
 
-    flows.print()
-    flow_preds.foreachRDD(
-      flow_predRDD => {
-        for (item <- flow_predRDD.collect()) {
-          println("rnntimestep prediction " + item.toString)
-//          for (el <- item) {
-//            println(el)
-//          }
+//    val numbers = input.flatMap(_.split(" ")).filter(_.nonEmpty).map(x=>parseDouble(x))
+//    numbers.print()
+
+
+    val numbers = input.flatMap(_.split(" ")).filter(_.nonEmpty).map(_.toDouble*scale)
+    val collected = new Array[Double](12)
+    var i = 0
+    numbers.foreachRDD(
+      flowRDD => {
+        for (item <- flowRDD.collect().toArray) {
+          println(item)
         }
+
+//        val ndarr = Nd4j.create(collected.toArray)
+//        val output = lstm.rnnTimeStep(ndarr)
+
+//        val ndarr = arr.asNDArray(lag, 1)
+//
+//        val output = lstm.rnnTimeStep(ndarr)
+//        val mean = output.mean(0)
+//
+//        val preds = mean.mul(scale)
+//
+//        println("Prediction: " + preds.toString)
       }
     )
-    scaled_flow_preds.foreachRDD(
-      scaledRDD => {
-        for (item <- scaledRDD.collect()) {
-          println("scaled rnntimestep prediction " + item.toString)
-        }
-      }
-    )
 
-    predictions.foreachRDD(
-      outputRDD => {
-        for (item <- outputRDD.collect()) {
-          println("output prediction " + item.toString)
-        }
-      }
-    )
+    val arr = collected.toArray
+    arr.foreach(println)
+
+
+
+
+
+
+
+
+
+
+
+
+//    val flows = input.map(x => (x.split(" "))).map(numbers => Vectors.dense(numbers.map(_.toDouble*scale))(0))
+//    flows.print()
+//    val ndarr = flows.map(flow => Array(flow).asNDArray(lag, 1))
+//    val flow_preds = flows.map(flow => lstm.rnnTimeStep(Array(flow).asNDArray(lag, 1)))
+//    val scaled_flow_preds = flow_preds.map(pred => pred/sigma)
+
+
+//    flows.print()
+//    flow_preds.foreachRDD(
+//      flow_predRDD => {
+//        for (item <- flow_predRDD.collect()) {
+//          println("rnntimestep prediction " + item.toString)
+////          for (el <- item) {
+////            println(el)
+////          }
+//        }
+//      }
+//    )
+//    scaled_flow_preds.foreachRDD(
+//      scaledRDD => {
+//        for (item <- scaledRDD.collect()) {
+//          println("scaled rnntimestep prediction " + item.toString)
+//        }
+//      }
+//    )
 
 
 //    val test3 = flows.foreachRDD( flow=> {
