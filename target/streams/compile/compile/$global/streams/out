@@ -1,16 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala:42:15: not found: value TrafficLSTM[0m
-[0m[[0m[31merror[0m] [0m[0m    val ssc = TrafficLSTM.execute([0m
-[0m[[0m[31merror[0m] [0m[0m              ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala:43:7: not found: value master[0m
-[0m[[0m[31merror[0m] [0m[0m      master = None,[0m
-[0m[[0m[31merror[0m] [0m[0m      ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala:44:14: reassignment to val[0m
-[0m[[0m[31merror[0m] [0m[0m      config = config,[0m
-[0m[[0m[31merror[0m] [0m[0m             ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala:45:7: not found: value jars[0m
-[0m[[0m[31merror[0m] [0m[0m      jars   = List(SparkContext.jarOfObject(this).get)[0m
-[0m[[0m[31merror[0m] [0m[0m      ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala:48:5: not found: value TrafficLSTM[0m
-[0m[[0m[31merror[0m] [0m[0m    TrafficLSTM.awaitTermination(ssc)[0m
-[0m[[0m[31merror[0m] [0m[0m    ^[0m
-[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala:104:43: a type was inferred to be `AnyVal`; this may indicate a programming error.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val flows = numbers.map(x => x.map(str=>parseDouble(str).getOrElse(-1)))[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

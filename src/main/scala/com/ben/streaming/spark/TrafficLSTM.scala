@@ -8,7 +8,7 @@ import org.nd4s._
 import org.nd4j.linalg.factory.Nd4j
 import org.nd4s.Implicits._
 
-import scala.collection.immutable.Queue
+import scala.collection.mutable.Queue
 import scala.collection.mutable.ArrayBuffer
 
 // Spark
@@ -95,7 +95,19 @@ object TrafficLSTM {
     val lag = 12
 
     val input = ssc.receiverStream(new NsqReceiver(config.nsq))
+
+
     input.print(lag)
+
+
+
+
+//    val numbers = input.map(_.split(" ")).filter(_.nonEmpty)
+//
+//    val flows = numbers.map(x => x.map(str=>parseDouble(str).getOrElse(-1)))
+//    val filtered_flows = flows.map(x => x.filter(d => d.!=(-1) ))
+
+
 
     // This works:
 
@@ -103,15 +115,66 @@ object TrafficLSTM {
 //    numbers.print()
 
 
+    // This is good code, just trying something new
     val numbers = input.flatMap(_.split(" ")).filter(_.nonEmpty).map(_.toDouble*scale)
-    val collected = new Array[Double](12)
-    var i = 0
+    var collected = new Queue[Double]()
     numbers.foreachRDD(
       flowRDD => {
         for (item <- flowRDD.collect().toArray) {
-          println(item)
+          if (collected.length < lag) {
+            collected.enqueue(item)
+          }
         }
 
+        val arr = collected.toArray
+        if (arr.length > 0) {
+          val ndarr = arr.asNDArray(lag, 1)
+          val output = lstm.output(ndarr)
+          val mean = output.mean(0)
+          val preds = mean.div(scale)
+          println("Predicted: " + preds.toString)
+        }
+
+        //val ndarr = arr.asNDArray(lag, 1)
+        //println(ndarr)
+
+        // Dequeue everything
+        Range(0, collected.length).foreach { _ =>
+          collected.dequeue
+        }
+
+
+      }
+    )
+
+
+
+
+//        val output = lstm.rnnTimeStep(ndarr)
+
+        // This part is good for testing
+//        val arr1 = Array(0.04,  0.06,  0.03,  0.05,  0.05,  0.01,  0.03,  0.03,  0.03,  0.02,  0.02,  0.04)
+//        val arr2 = Array(0.06,  0.03,  0.05,  0.05,  0.01,  0.03,  0.03,  0.03,  0.02,  0.02,  0.04,  0.03)
+//        val arr3 = Array(0.03,  0.05,  0.05,  0.01,  0.03,  0.03,  0.03,  0.02,  0.02,  0.04,  0.03,  0.01)
+//
+//
+//        val ndarr2 = Nd4j.create(arr2).transpose()
+//        val output = lstm.rnnTimeStep(ndarr2)
+//        println("Output was : " + output.toString)
+//        val mean = output.mean(0)
+//        println("Mean is : " + mean.toString)
+//        val preds = mean.div(scale)
+//        println("Predicted: " + preds.toString)
+
+
+//        println(ndarr.toString)
+//        println(".")
+//        println(".")
+//        val output = lstm.rnnTimeStep(ndarr)
+//        val mean = output.mean(0)
+//
+//        val preds = mean.mul(scale)
+//        println("Prediction: " + preds.toString)
 //        val ndarr = Nd4j.create(collected.toArray)
 //        val output = lstm.rnnTimeStep(ndarr)
 
@@ -123,11 +186,8 @@ object TrafficLSTM {
 //        val preds = mean.mul(scale)
 //
 //        println("Prediction: " + preds.toString)
-      }
-    )
-
-    val arr = collected.toArray
-    arr.foreach(println)
+//      }
+//    )
 
 
 
