@@ -23,5 +23,7 @@ package model {
     val appName = conf.getString("appName")
     val batchDuration = conf.getLong("batchDuration")
     val outputFile = conf.getString("outputFile")
+    val h5Path = conf.getString("h5Path")
+    //val params = conf.getString("params")
   }
 }

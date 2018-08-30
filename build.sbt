@@ -19,7 +19,7 @@ lazy val root = project.in(file("."))
       Dependencies.Libraries.nd4s
 //      "org.deeplearning4j" % "scalnet_2.11" % "0.9.2-SNAPSHOT",
 //      "org.deeplearning4j" % "deeplearning4j-core" % "0.9.2-SNAPSHOT",
-//      "org.nd4j" %"nd4j-native" % "0.9.2-SNAPSHOT",
+//      "org.nd4j" %"nd4j-native" % "0.9.2-SNAPSHOT"
     )
   )
 
@@ -36,6 +36,7 @@ assemblyMergeStrategy in assembly := {
   case PathList("com", "yammer", xs @ _*) => MergeStrategy.last
   case PathList("org", "deeplearning4j", xs @ _*) => MergeStrategy.last
   case PathList("org", "slf4j", xs @ _*) => MergeStrategy.last
+  case PathList("org", "bytedeco", xs@_*) => MergeStrategy.last
   case "about.html" => MergeStrategy.rename
   case "META-INF/ECLIPSEF.RSA" => MergeStrategy.last
   case "META-INF/mailcap" => MergeStrategy.last

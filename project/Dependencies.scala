@@ -8,8 +8,8 @@ object Dependencies {
     val nsqClient      = "1.0.0.RC4"
     val scopt          = "3.7.0"
     val config         = "1.3.1"
-    val dl4jVer         = "0.9.1"
-    val nd4jVer        = "0.9.1"
+    val dl4jVer         = "1.0.0-alpha"
+    val nd4jVer        = "1.0.0-alpha"
   }
   object Libraries {
     val sparkSql       = "org.apache.spark"      %% "spark-sql"            % V.sparkSql

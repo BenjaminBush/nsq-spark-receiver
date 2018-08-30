@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <option name="BUILD_PROCESS_HEAP_SIZE" value="8192" />
     <bytecodeTargetLevel target="1.8">
+      <module name="nsq-spark-receiver" target="1.8" />
       <module name="root" target="1.8" />
     </bytecodeTargetLevel>
   </component>

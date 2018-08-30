@@ -1,4 +1,8 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala:104:43: a type was inferred to be `AnyVal`; this may indicate a programming error.[0m
-[0m[[0m[33mwarn[0m] [0m[0m    val flows = numbers.map(x => x.map(str=>parseDouble(str).getOrElse(-1)))[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                          ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[33mwarn[0m] [0m[0mimplicit numeric widening[0m
+[0m[[0m[33mwarn[0m] [0m[0mimplicit numeric widening[0m
+[0m[[0m[33mwarn[0m] [0m[0mimplicit numeric widening[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala:83:35: implicit numeric widening[0m
+[0m[[0m[33mwarn[0m] [0m[0m          val ndarr2 = ndarr1.add(min_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mimplicit numeric widening[0m
+[0m[[0m[33mwarn[0m] [0m[0m5 warnings found[0m

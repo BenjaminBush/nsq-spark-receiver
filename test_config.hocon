@@ -1,5 +1,8 @@
 appName: "nsq-app"
 
+h5Path: "/home/ben/git/research/TrafficPrediction/lstm_model.h5"
+params: "/home/ben/git/research/TrafficPrediction/metadata.json"
+
 # the time interval at which streaming data will be divided into batches
 batchDuration: 1
 
