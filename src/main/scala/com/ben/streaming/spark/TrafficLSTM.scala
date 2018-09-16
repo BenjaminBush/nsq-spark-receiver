@@ -29,6 +29,10 @@ import scala.collection.mutable.ListBuffer
 // This project
 import model._
 
+// NSQ Specifics
+//import com.github.brainlag.nsq.{NSQConfig, NSQProducer, NSQMessage}
+import com.sproutsocial.nsq._
+
 object TrafficLSTM {
 
   private def writeToFile(str: String, filePath: String) : Unit = {
@@ -47,14 +51,24 @@ object TrafficLSTM {
       sparkConf.setMaster(m)
     }
 
+    // Producer settings
+    val producerConf = config.producer
+    val host = producerConf.host
+    val port = producerConf.port
+    val outTopic = producerConf.outTopicName
+    val lookupPort = producerConf.lookupPort
+    val channelName = producerConf.channelName
+//    val producer = new NSQProducer()
+//    producer.addAddress(host, port)
+//    producer.start()
+    var producer = new Publisher(host)
+    //producer.produce("TestTopic", ("this is a message").getBytes());
 
     val ssc = new StreamingContext(sparkConf, Seconds(config.batchDuration))
 
-    //val h5path = config.h5Path
-    val h5path = "/home/ben/git/research/TrafficPrediction/lstm_model.h5"
+    val h5path = config.h5Path
+    val scale_ = config.scale_
     val lstm = KerasModelImport.importKerasSequentialModelAndWeights(h5path)
-//    val params = config.params
-    val scale_ = 0.005076142131979695
     val lag = 12
 
     val input = ssc.receiverStream(new NsqReceiver(config.nsq))
@@ -79,17 +93,23 @@ object TrafficLSTM {
           val ndarr1 = ndarr.mul(scale_)
           val output = lstm.output(ndarr1)
           var outputed = output.div(scale_).getDouble(11)
-          print("original output " + outputed.toString)
           if (outputed > 100) {
             val diff = outputed-100
             outputed += diff*2.25
+            if (outputed > 400) {
+              outputed -= 20
+            }
           }
           if (outputed < 82) {
             val diff = 82 - outputed
             outputed -= diff*1.25
           }
-          println("output : " + outputed.toString)
-          println("actual : " + arr.lastOption.getOrElse(0).toString)
+          println("Predicted : " + outputed.toString)
+          println("Actual : " + arr.lastOption.getOrElse(0).toString)
+
+          
+          producer.publish(outTopic, (outputed.toString).getBytes());
+
         }
 
 

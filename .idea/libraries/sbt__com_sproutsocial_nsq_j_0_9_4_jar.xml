@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.sproutsocial:nsq-j:0.9.4:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.sproutsocial/nsq-j/jars/nsq-j-0.9.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.sproutsocial/nsq-j/srcs/nsq-j-0.9.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

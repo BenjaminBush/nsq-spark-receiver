@@ -13,7 +13,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: aopalliance:aopalliance:1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.7.16:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.7.25:jar" level="project" />
+    <orderEntry type="library" name="sbt: net.jcip:jcip-annotations:1.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.sproutsocial:nsq-j:0.9.4:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.google.code.gson:gson:2.8.2:jar" level="project" />
     <orderEntry type="library" name="sbt: ch.qos.logback:logback-core:1.1.2:jar" level="project" />
     <orderEntry type="library" name="sbt: ch.qos.logback:logback-classic:1.1.2:jar" level="project" />
     <orderEntry type="library" name="sbt: com.chuusai:shapeless_2.11:2.3.2:jar" level="project" />
@@ -220,7 +223,6 @@
     </orderEntry>
     <orderEntry type="library" name="sbt: com.github.os72:protobuf-java-shaded-351:0.9:jar" level="project" />
     <orderEntry type="library" name="sbt: com.github.os72:protobuf-java-util-shaded-351:0.9:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.google.code.gson:gson:2.7:jar" level="project" />
     <orderEntry type="library" name="sbt: com.tdunning:t-digest:3.2:jar" level="project" />
     <orderEntry type="library" name="sbt: com.vlkan:flatbuffers:1.2.0-3f79e055:jar" level="project" />
     <orderEntry type="library" name="sbt: org.apache.commons:commons-compress:1.16.1:jar" level="project" />

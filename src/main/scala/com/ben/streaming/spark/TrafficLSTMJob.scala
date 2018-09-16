@@ -46,11 +46,5 @@ object TrafficLSTMJob {
     )
 
     TrafficLSTM.awaitTermination(ssc)
-
-//    val runLSTM = new runLSTM()
-//    val ssc = runLSTM.execute(config)
-//
-//    runLSTM.awaitTermination(ssc)
-
   }
 }

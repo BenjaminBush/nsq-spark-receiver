@@ -11,6 +11,7 @@ lazy val root = project.in(file("."))
       Dependencies.Libraries.sparkmllib,
       Dependencies.Libraries.sparkStreaming,
       Dependencies.Libraries.nsqClient,
+      Dependencies.Libraries.nsqProducer,
       Dependencies.Libraries.scopt,
       Dependencies.Libraries.config,
       Dependencies.Libraries.dl4jCore,
