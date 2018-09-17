@@ -1,8 +1,7 @@
-[0m[[0m[33mwarn[0m] [0m[0mimplicit numeric widening[0m
-[0m[[0m[33mwarn[0m] [0m[0mimplicit numeric widening[0m
-[0m[[0m[33mwarn[0m] [0m[0mimplicit numeric widening[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala:83:35: implicit numeric widening[0m
-[0m[[0m[33mwarn[0m] [0m[0m          val ndarr2 = ndarr1.add(min_)[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                  ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mimplicit numeric widening[0m
-[0m[[0m[33mwarn[0m] [0m[0m5 warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala:40:18: object JSON in package json is deprecated: This object will be removed.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val parsed = JSON.parseFull(s)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala:46:18: object JSON in package json is deprecated: This object will be removed.[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val parsed = JSON.parseFull(s)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

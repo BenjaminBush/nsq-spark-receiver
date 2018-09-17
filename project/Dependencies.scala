@@ -11,6 +11,7 @@ object Dependencies {
     val config         = "1.3.1"
     val dl4jVer         = "1.0.0-alpha"
     val nd4jVer        = "1.0.0-alpha"
+    val json4sNativeVer= "3.6.1"
   }
   object Libraries {
     val sparkSql       = "org.apache.spark"      %% "spark-sql"            % V.sparkSql
@@ -24,5 +25,6 @@ object Dependencies {
     val nd4jNative     = "org.nd4j" % "nd4j-native" % V.nd4jVer
     val nd4jNativePlatform = "org.nd4j" % "nd4j-native-platform" % V.nd4jVer
     val nd4s           = "org.nd4j" %% "nd4s" % V.nd4jVer
+    val json4sNative    = "org.json4s" %% "json4s-native" % V.json4sNativeVer
   }
 }

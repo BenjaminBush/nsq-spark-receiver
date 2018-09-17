@@ -7,8 +7,20 @@
 		revision="1.0.3"
 		conf="compile"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20180916180728"/>
+		date="20180917090851"/>
 	<dependencies>
+		<module organisation="org.json4s" name="json4s-native_2.11">
+			<revision name="3.6.1" status="release" pubdate="20180904092243" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="242">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2803" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-native_2.11/ivy-3.6.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/json4s/json4s-native_2.11/3.6.1/json4s-native_2.11-3.6.1.pom"/>
+				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.6.1" rev-constraint-default="3.6.1" rev-constraint-dynamic="3.6.1" callerrev="1.0.3"/>
+				<artifacts>
+					<artifact name="json4s-native_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="8959" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-native_2.11/srcs/json4s-native_2.11-3.6.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/json4s/json4s-native_2.11/3.6.1/json4s-native_2.11-3.6.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="com.typesafe" name="config">
 			<revision name="1.3.1" status="release" pubdate="20160924075320" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="238">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
@@ -24,7 +36,7 @@
 		<module organisation="org.apache.spark" name="spark-mllib_2.11">
 			<revision name="2.2.0" status="release" pubdate="20170630194144" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="235">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="8797" time="62" location="/home/ben/.ivy2/cache/org.apache.spark/spark-mllib_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-mllib_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-mllib_2.11/2.2.0/spark-mllib_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="8797" time="74" location="/home/ben/.ivy2/cache/org.apache.spark/spark-mllib_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-mllib_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-mllib_2.11/2.2.0/spark-mllib_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-mllib_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="825101" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-mllib_2.11/srcs/spark-mllib_2.11-2.2.0-sources.jar">
@@ -36,7 +48,7 @@
 		<module organisation="org.apache.spark" name="spark-graphx_2.11">
 			<revision name="2.2.0" status="release" pubdate="20170630193931" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="241">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="6790" time="64" location="/home/ben/.ivy2/cache/org.apache.spark/spark-graphx_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-graphx_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-graphx_2.11/2.2.0/spark-graphx_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="6790" time="77" location="/home/ben/.ivy2/cache/org.apache.spark/spark-graphx_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-graphx_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-graphx_2.11/2.2.0/spark-graphx_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-graphx_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="103452" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-graphx_2.11/srcs/spark-graphx_2.11-2.2.0-sources.jar">
@@ -62,7 +74,7 @@
 		<module organisation="org.apache.spark" name="spark-streaming_2.11">
 			<revision name="2.2.0" status="release" pubdate="20170630193448" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="224">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="9548" time="58" location="/home/ben/.ivy2/cache/org.apache.spark/spark-streaming_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-streaming_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-streaming_2.11/2.2.0/spark-streaming_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="9548" time="108" location="/home/ben/.ivy2/cache/org.apache.spark/spark-streaming_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-streaming_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-streaming_2.11/2.2.0/spark-streaming_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-streaming_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="265033" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-streaming_2.11/srcs/spark-streaming_2.11-2.2.0-sources.jar">
@@ -72,13 +84,49 @@
 			</revision>
 		</module>
 		<module organisation="com.github.brainlag" name="nsq-client">
-			<revision name="1.0.0.RC4" status="release" pubdate="20170405161350" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/brainlag/JavaNSQClient" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="191">
+			<revision name="1.0.0.RC4" status="release" pubdate="20170405161350" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/brainlag/JavaNSQClient" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="193">
 				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
 				<metadata-artifact status="no" details="" size="3971" time="0" location="/home/ben/.ivy2/cache/com.github.brainlag/nsq-client/ivy-1.0.0.RC4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/brainlag/nsq-client/1.0.0.RC4/nsq-client-1.0.0.RC4.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0.RC4" rev-constraint-default="1.0.0.RC4" rev-constraint-dynamic="1.0.0.RC4" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="nsq-client" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="22908" time="0" location="/home/ben/.ivy2/cache/com.github.brainlag/nsq-client/srcs/nsq-client-1.0.0.RC4-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/github/brainlag/nsq-client/1.0.0.RC4/nsq-client-1.0.0.RC4-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.json4s" name="json4s-core_2.11">
+			<revision name="3.6.1" status="release" pubdate="20180904092221" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="182">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3095" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-core_2.11/ivy-3.6.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/json4s/json4s-core_2.11/3.6.1/json4s-core_2.11-3.6.1.pom"/>
+				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.6.1" rev-constraint-default="3.6.1" rev-constraint-dynamic="3.6.1" callerrev="1.0.3"/>
+				<artifacts>
+					<artifact name="json4s-core_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="41731" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-core_2.11/srcs/json4s-core_2.11-3.6.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/json4s/json4s-core_2.11/3.6.1/json4s-core_2.11-3.6.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.json4s" name="json4s-scalap_2.11">
+			<revision name="3.6.1" status="release" pubdate="20180904092045" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="190">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2658" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-scalap_2.11/ivy-3.6.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/json4s/json4s-scalap_2.11/3.6.1/json4s-scalap_2.11-3.6.1.pom"/>
+				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.6.1" rev-constraint-default="3.6.1" rev-constraint-dynamic="3.6.1" callerrev="1.0.3"/>
+				<artifacts>
+					<artifact name="json4s-scalap_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="18633" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-scalap_2.11/srcs/json4s-scalap_2.11-3.6.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/json4s/json4s-scalap_2.11/3.6.1/json4s-scalap_2.11-3.6.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.json4s" name="json4s-ast_2.11">
+			<revision name="3.6.1" status="release" pubdate="20180904092113" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="188">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2649" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-ast_2.11/ivy-3.6.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/json4s/json4s-ast_2.11/3.6.1/json4s-ast_2.11-3.6.1.pom"/>
+				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.6.1" rev-constraint-default="3.6.1" rev-constraint-dynamic="3.6.1" callerrev="1.0.3"/>
+				<artifacts>
+					<artifact name="json4s-ast_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="6978" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-ast_2.11/srcs/json4s-ast_2.11-3.6.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/json4s/json4s-ast_2.11/3.6.1/json4s-ast_2.11-3.6.1-sources.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -158,7 +206,7 @@
 			</revision>
 		</module>
 		<module organisation="org.deeplearning4j" name="deeplearning4j-ui-components">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405185854" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="188">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405185854" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="189">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="11186" time="0" location="/home/ben/.ivy2/cache/org.deeplearning4j/deeplearning4j-ui-components/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/deeplearning4j/deeplearning4j-ui-components/1.0.0-alpha/deeplearning4j-ui-components-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -194,7 +242,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.logging.log4j" name="log4j-api">
-			<revision name="2.5" status="release" pubdate="20151206181903" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="246">
+			<revision name="2.5" status="release" pubdate="20151206181903" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="247">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="24558" time="0" location="/home/ben/.ivy2/cache/org.apache.logging.log4j/log4j-api/ivy-2.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.5/log4j-api-2.5.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.5" rev-constraint-default="2.5" rev-constraint-dynamic="2.5" callerrev="1.0.3"/>
@@ -205,8 +253,56 @@
 				</artifacts>
 			</revision>
 		</module>
+		<module organisation="org.scala-lang" name="scala-compiler">
+			<revision name="2.11.0" status="release" pubdate="20140416041405" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="75">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="3257" time="0" location="/home/ben/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.11.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.11.0/scala-compiler-2.11.0.pom"/>
+				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.11.0" rev-constraint-default="2.11.0" rev-constraint-dynamic="2.11.0" callerrev="1.0.3"/>
+				<artifacts>
+					<artifact name="scala-compiler" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2077837" time="0" location="/home/ben/.ivy2/cache/org.scala-lang/scala-compiler/srcs/scala-compiler-2.11.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.11.0/scala-compiler-2.11.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-xml_2.11">
+			<revision name="1.0.1" status="release" pubdate="20140416042108" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="78">
+				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
+				<metadata-artifact status="no" details="" size="3137" time="0" location="/home/ben/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/ivy-1.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.1/scala-xml_2.11-1.0.1.pom"/>
+				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.1" rev-constraint-default="1.0.1" rev-constraint-dynamic="1.0.1" callerrev="1.0.3"/>
+				<artifacts>
+					<artifact name="scala-xml_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="109171" time="0" location="/home/ben/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/srcs/scala-xml_2.11-1.0.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.1/scala-xml_2.11-1.0.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-parser-combinators_2.11">
+			<revision name="1.0.1" status="release" pubdate="20140416042222" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="229">
+				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
+				<metadata-artifact status="no" details="" size="2929" time="0" location="/home/ben/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/ivy-1.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.pom"/>
+				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.1" rev-constraint-default="1.0.1" rev-constraint-dynamic="1.0.1" callerrev="1.0.3"/>
+				<artifacts>
+					<artifact name="scala-parser-combinators_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="41398" time="0" location="/home/ben/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/srcs/scala-parser-combinators_2.11-1.0.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.11.0" status="release" pubdate="20140416041350" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.0/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="226">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2825" time="0" location="/home/ben/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.0/scala-reflect-2.11.0.pom"/>
+				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.11.0" rev-constraint-default="2.11.0" rev-constraint-dynamic="2.11.0" callerrev="1.0.3" extra-info.apiURL="http://www.scala-lang.org/api/2.11.0/"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="554963" time="0" location="/home/ben/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.11.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.0/scala-reflect-2.11.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="org.deeplearning4j" name="deeplearning4j-modelimport">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405185740" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="71">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405185740" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="72">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="10835" time="0" location="/home/ben/.ivy2/cache/org.deeplearning4j/deeplearning4j-modelimport/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/deeplearning4j/deeplearning4j-modelimport/1.0.0-alpha/deeplearning4j-modelimport-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -218,7 +314,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.commons" name="commons-collections4">
-			<revision name="4.1" status="release" pubdate="20151125155515" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-collections/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="70">
+			<revision name="4.1" status="release" pubdate="20151125155515" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-collections/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="71">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="11481" time="0" location="/home/ben/.ivy2/cache/org.apache.commons/commons-collections4/ivy-4.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="4.1" rev-constraint-default="4.1" rev-constraint-dynamic="4.1" callerrev="1.0.3"/>
@@ -230,12 +326,12 @@
 			</revision>
 		</module>
 		<module organisation="com.sproutsocial" name="nsq-j">
-			<revision name="0.9.4" status="release" pubdate="20180515144926" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/sproutsocial/nsq-j" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="58">
+			<revision name="0.9.4" status="release" pubdate="20180515144926" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/sproutsocial/nsq-j" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="59">
 				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
 				<metadata-artifact status="no" details="" size="4304" time="0" location="/home/ben/.ivy2/cache/com.sproutsocial/nsq-j/ivy-0.9.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/sproutsocial/nsq-j/0.9.4/nsq-j-0.9.4.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="0.9.4" rev-constraint-default="0.9.4" rev-constraint-dynamic="0.9.4" callerrev="1.0.3"/>
 				<artifacts>
-					<artifact name="nsq-j" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="30123" time="150" location="/home/ben/.ivy2/cache/com.sproutsocial/nsq-j/srcs/nsq-j-0.9.4-sources.jar">
+					<artifact name="nsq-j" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="30123" time="0" location="/home/ben/.ivy2/cache/com.sproutsocial/nsq-j/srcs/nsq-j-0.9.4-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/sproutsocial/nsq-j/0.9.4/nsq-j-0.9.4-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -247,7 +343,7 @@
 				<metadata-artifact status="no" details="" size="3598" time="0" location="/home/ben/.ivy2/cache/com.google.code.gson/gson/ivy-2.8.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.8.2" rev-constraint-default="2.8.2" rev-constraint-dynamic="2.8.2" callerrev="1.0.3"/>
 				<artifacts>
-					<artifact name="gson" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="147855" time="287" location="/home/ben/.ivy2/cache/com.google.code.gson/gson/srcs/gson-2.8.2-sources.jar">
+					<artifact name="gson" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="147855" time="0" location="/home/ben/.ivy2/cache/com.google.code.gson/gson/srcs/gson-2.8.2-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -266,7 +362,7 @@
 			</revision>
 		</module>
 		<module organisation="com.github.scopt" name="scopt_2.11">
-			<revision name="3.7.0" status="release" pubdate="20170825043021" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/scopt/scopt" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="52">
+			<revision name="3.7.0" status="release" pubdate="20170825043021" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/scopt/scopt" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="53">
 				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
 				<metadata-artifact status="no" details="" size="2680" time="0" location="/home/ben/.ivy2/cache/com.github.scopt/scopt_2.11/ivy-3.7.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/scopt/scopt_2.11/3.7.0/scopt_2.11-3.7.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.7.0" rev-constraint-default="3.7.0" rev-constraint-dynamic="3.7.0" callerrev="1.0.3"/>
@@ -278,7 +374,7 @@
 			</revision>
 		</module>
 		<module organisation="org.nd4j" name="nd4s_2.11">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180406202708" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://nd4j.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="44">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180406202708" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://nd4j.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="45">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="3698" time="0" location="/home/ben/.ivy2/cache/org.nd4j/nd4s_2.11/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/nd4j/nd4s_2.11/1.0.0-alpha/nd4s_2.11-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -290,7 +386,7 @@
 			</revision>
 		</module>
 		<module organisation="org.nd4j" name="nd4j-native-platform">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405022551" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="60">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405022551" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="61">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="13575" time="0" location="/home/ben/.ivy2/cache/org.nd4j/nd4j-native-platform/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/nd4j/nd4j-native-platform/1.0.0-alpha/nd4j-native-platform-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -302,7 +398,7 @@
 			</revision>
 		</module>
 		<module organisation="org.deeplearning4j" name="rl4j-api">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405164919" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="34">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405164919" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="35">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="6133" time="0" location="/home/ben/.ivy2/cache/org.deeplearning4j/rl4j-api/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/deeplearning4j/rl4j-api/1.0.0-alpha/rl4j-api-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -314,7 +410,7 @@
 			</revision>
 		</module>
 		<module organisation="org.deeplearning4j" name="gym-java-client">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405164216" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/deeplearning4j/gym-java-client" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="55">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405164216" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/deeplearning4j/gym-java-client" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="56">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="5299" time="0" location="/home/ben/.ivy2/cache/org.deeplearning4j/gym-java-client/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/deeplearning4j/gym-java-client/1.0.0-alpha/gym-java-client-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -326,7 +422,7 @@
 			</revision>
 		</module>
 		<module organisation="com.mashape.unirest" name="unirest-java">
-			<revision name="1.4.9" status="release" pubdate="20160331175948" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://unirest.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="204">
+			<revision name="1.4.9" status="release" pubdate="20160331175948" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://unirest.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="205">
 				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
 				<metadata-artifact status="no" details="" size="4247" time="0" location="/home/ben/.ivy2/cache/com.mashape.unirest/unirest-java/ivy-1.4.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/mashape/unirest/unirest-java/1.4.9/unirest-java-1.4.9.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.4.9" rev-constraint-default="1.4.9" rev-constraint-dynamic="1.4.9" callerrev="1.0.3"/>
@@ -350,7 +446,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.httpcomponents" name="httpcore-nio">
-			<revision name="4.4.4" status="release" pubdate="20151026121927" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-core-ga" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="32">
+			<revision name="4.4.4" status="release" pubdate="20151026121927" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-core-ga" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="33">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="7781" time="0" location="/home/ben/.ivy2/cache/org.apache.httpcomponents/httpcore-nio/ivy-4.4.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore-nio/4.4.4/httpcore-nio-4.4.4.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="4.4.4" rev-constraint-default="4.4.4" rev-constraint-dynamic="4.4.4" callerrev="1.0.3"/>
@@ -362,7 +458,7 @@
 			</revision>
 		</module>
 		<module organisation="org.json" name="json">
-			<revision name="20160212" status="release" pubdate="20160213191631" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/douglascrockford/JSON-java" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="30">
+			<revision name="20160212" status="release" pubdate="20160213191631" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/douglascrockford/JSON-java" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="31">
 				<license name="The JSON License" url="http://json.org/license.html"/>
 				<metadata-artifact status="no" details="" size="4161" time="0" location="/home/ben/.ivy2/cache/org.json/json/ivy-20160212.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/json/json/20160212/json-20160212.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="20160212" rev-constraint-default="20160212" rev-constraint-dynamic="20160212" callerrev="1.0.3"/>
@@ -374,7 +470,7 @@
 			</revision>
 		</module>
 		<module organisation="com.google.guava" name="guava">
-			<revision name="20.0" status="release" pubdate="20161028155635" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="27">
+			<revision name="20.0" status="release" pubdate="20161028155635" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="28">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="6358" time="0" location="/home/ben/.ivy2/cache/com.google.guava/guava/ivy-20.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/guava/guava/20.0/guava-20.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="20.0" rev-constraint-default="20.0" rev-constraint-dynamic="20.0" callerrev="1.0.3"/>
@@ -386,7 +482,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.httpcomponents" name="httpmime">
-			<revision name="4.5.2" status="release" pubdate="20160221100652" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-client" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="24">
+			<revision name="4.5.2" status="release" pubdate="20160221100652" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-client" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="25">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="9321" time="0" location="/home/ben/.ivy2/cache/org.apache.httpcomponents/httpmime/ivy-4.5.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="4.5.2" rev-constraint-default="4.5.2" rev-constraint-dynamic="4.5.2" callerrev="1.0.3"/>
@@ -398,7 +494,7 @@
 			</revision>
 		</module>
 		<module organisation="org.deeplearning4j" name="nearestneighbor-core">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405185828" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="16">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405185828" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="17">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="11158" time="0" location="/home/ben/.ivy2/cache/org.deeplearning4j/nearestneighbor-core/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/deeplearning4j/nearestneighbor-core/1.0.0-alpha/nearestneighbor-core-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -410,7 +506,7 @@
 			</revision>
 		</module>
 		<module organisation="org.deeplearning4j" name="deeplearning4j-nn">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405185821" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="83">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405185821" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="84">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="10919" time="0" location="/home/ben/.ivy2/cache/org.deeplearning4j/deeplearning4j-nn/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/deeplearning4j/deeplearning4j-nn/1.0.0-alpha/deeplearning4j-nn-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -434,7 +530,7 @@
 			</revision>
 		</module>
 		<module organisation="org.deeplearning4j" name="deeplearning4j-datasets">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405184949" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="80">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405184949" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="81">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="10806" time="0" location="/home/ben/.ivy2/cache/org.deeplearning4j/deeplearning4j-datasets/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/deeplearning4j/deeplearning4j-datasets/1.0.0-alpha/deeplearning4j-datasets-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -446,7 +542,7 @@
 			</revision>
 		</module>
 		<module organisation="org.deeplearning4j" name="deeplearning4j-datavec-iterators">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405190028" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="45">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405190028" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="46">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="10783" time="0" location="/home/ben/.ivy2/cache/org.deeplearning4j/deeplearning4j-datavec-iterators/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/deeplearning4j/deeplearning4j-datavec-iterators/1.0.0-alpha/deeplearning4j-datavec-iterators-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -458,7 +554,7 @@
 			</revision>
 		</module>
 		<module organisation="org.datavec" name="datavec-data-image">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405154955" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="242">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405154955" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="243">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="10305" time="0" location="/home/ben/.ivy2/cache/org.datavec/datavec-data-image/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/datavec/datavec-data-image/1.0.0-alpha/datavec-data-image-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -470,7 +566,7 @@
 			</revision>
 		</module>
 		<module organisation="org.bytedeco" name="javacv">
-			<revision name="1.4.1" status="release" pubdate="20180329052836" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://bytedeco.org/javacv/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="63">
+			<revision name="1.4.1" status="release" pubdate="20180329052836" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://bytedeco.org/javacv/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="64">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<license name="GNU General Public License (GPL) version 2, or any later version" url="http://www.gnu.org/licenses/"/>
 				<license name="GPLv2 with Classpath exception" url="http://www.gnu.org/software/classpath/license.html"/>
@@ -484,7 +580,7 @@
 			</revision>
 		</module>
 		<module organisation="org.bytedeco.javacpp-presets" name="flandmark">
-			<revision name="1.07-1.4.1" status="release" pubdate="20180328180749" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="206">
+			<revision name="1.07-1.4.1" status="release" pubdate="20180328180749" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="207">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<license name="GNU General Public License (GPL) version 2, or any later version" url="http://www.gnu.org/licenses/"/>
 				<license name="GPLv2 with Classpath exception" url="http://www.gnu.org/software/classpath/license.html"/>
@@ -526,7 +622,7 @@
 			</revision>
 		</module>
 		<module organisation="org.bytedeco.javacpp-presets" name="librealsense">
-			<revision name="1.12.1-1.4.1" status="release" pubdate="20180328173147" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="18">
+			<revision name="1.12.1-1.4.1" status="release" pubdate="20180328173147" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="19">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<license name="GNU General Public License (GPL) version 2, or any later version" url="http://www.gnu.org/licenses/"/>
 				<license name="GPLv2 with Classpath exception" url="http://www.gnu.org/software/classpath/license.html"/>
@@ -568,7 +664,7 @@
 			</revision>
 		</module>
 		<module organisation="org.bytedeco.javacpp-presets" name="libdc1394">
-			<revision name="2.2.5-1.4.1" status="release" pubdate="20180328170634" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="54">
+			<revision name="2.2.5-1.4.1" status="release" pubdate="20180328170634" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="55">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<license name="GNU General Public License (GPL) version 2, or any later version" url="http://www.gnu.org/licenses/"/>
 				<license name="GPLv2 with Classpath exception" url="http://www.gnu.org/software/classpath/license.html"/>
@@ -624,7 +720,7 @@
 			</revision>
 		</module>
 		<module organisation="com.twelvemonkeys.imageio" name="imageio-bmp">
-			<revision name="3.1.1" status="release" pubdate="20150611050413" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="38">
+			<revision name="3.1.1" status="release" pubdate="20150611050413" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="39">
 				<metadata-artifact status="no" details="" size="6088" time="0" location="/home/ben/.ivy2/cache/com.twelvemonkeys.imageio/imageio-bmp/ivy-3.1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twelvemonkeys/imageio/imageio-bmp/3.1.1/imageio-bmp-3.1.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.1.1" rev-constraint-default="3.1.1" rev-constraint-dynamic="3.1.1" callerrev="1.0.3"/>
 				<artifacts>
@@ -635,7 +731,7 @@
 			</revision>
 		</module>
 		<module organisation="com.twelvemonkeys.imageio" name="imageio-psd">
-			<revision name="3.1.1" status="release" pubdate="20150611051023" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="248">
+			<revision name="3.1.1" status="release" pubdate="20150611051023" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="249">
 				<metadata-artifact status="no" details="" size="6226" time="0" location="/home/ben/.ivy2/cache/com.twelvemonkeys.imageio/imageio-psd/ivy-3.1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twelvemonkeys/imageio/imageio-psd/3.1.1/imageio-psd-3.1.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.1.1" rev-constraint-default="3.1.1" rev-constraint-dynamic="3.1.1" callerrev="1.0.3"/>
 				<artifacts>
@@ -646,7 +742,7 @@
 			</revision>
 		</module>
 		<module organisation="com.twelvemonkeys.imageio" name="imageio-tiff">
-			<revision name="3.1.1" status="release" pubdate="20150611051251" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="78">
+			<revision name="3.1.1" status="release" pubdate="20150611051251" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="79">
 				<metadata-artifact status="no" details="" size="6241" time="0" location="/home/ben/.ivy2/cache/com.twelvemonkeys.imageio/imageio-tiff/ivy-3.1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twelvemonkeys/imageio/imageio-tiff/3.1.1/imageio-tiff-3.1.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.1.1" rev-constraint-default="3.1.1" rev-constraint-dynamic="3.1.1" callerrev="1.0.3"/>
 				<artifacts>
@@ -679,7 +775,7 @@
 			</revision>
 		</module>
 		<module organisation="com.twelvemonkeys.common" name="common-image">
-			<revision name="3.1.1" status="release" pubdate="20150611050041" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="207">
+			<revision name="3.1.1" status="release" pubdate="20150611050041" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="208">
 				<metadata-artifact status="no" details="" size="4520" time="0" location="/home/ben/.ivy2/cache/com.twelvemonkeys.common/common-image/ivy-3.1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twelvemonkeys/common/common-image/3.1.1/common-image-3.1.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.1.1" rev-constraint-default="3.1.1" rev-constraint-dynamic="3.1.1" callerrev="1.0.3"/>
 				<artifacts>
@@ -701,7 +797,7 @@
 			</revision>
 		</module>
 		<module organisation="com.twelvemonkeys.common" name="common-lang">
-			<revision name="3.1.1" status="release" pubdate="20150611045957" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="49">
+			<revision name="3.1.1" status="release" pubdate="20150611045957" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="50">
 				<metadata-artifact status="no" details="" size="4101" time="0" location="/home/ben/.ivy2/cache/com.twelvemonkeys.common/common-lang/ivy-3.1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twelvemonkeys/common/common-lang/3.1.1/common-lang-3.1.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.1.1" rev-constraint-default="3.1.1" rev-constraint-dynamic="3.1.1" callerrev="1.0.3"/>
 				<artifacts>
@@ -712,7 +808,7 @@
 			</revision>
 		</module>
 		<module organisation="com.github.jai-imageio" name="jai-imageio-core">
-			<revision name="1.3.0" status="release" pubdate="20150305072314" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/jai-imageio/jai-imageio-core" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="56">
+			<revision name="1.3.0" status="release" pubdate="20150305072314" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/jai-imageio/jai-imageio-core" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="57">
 				<license name="BSD 3-clause License" url="http://opensource.org/licenses/BSD-3-Clause"/>
 				<metadata-artifact status="no" details="" size="3661" time="0" location="/home/ben/.ivy2/cache/com.github.jai-imageio/jai-imageio-core/ivy-1.3.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/jai-imageio/jai-imageio-core/1.3.0/jai-imageio-core-1.3.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.3.0" rev-constraint-default="1.3.0" rev-constraint-dynamic="1.3.0" callerrev="1.0.3"/>
@@ -724,7 +820,7 @@
 			</revision>
 		</module>
 		<module organisation="org.datavec" name="datavec-api">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405154955" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="57">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405154955" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="58">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="10216" time="0" location="/home/ben/.ivy2/cache/org.datavec/datavec-api/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/datavec/datavec-api/1.0.0-alpha/datavec-api-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -749,7 +845,7 @@
 			</revision>
 		</module>
 		<module organisation="org.eclipse.collections" name="eclipse-collections-api">
-			<revision name="9.1.0" status="release" pubdate="20171231112646" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="201">
+			<revision name="9.1.0" status="release" pubdate="20171231112646" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="202">
 				<license name="Eclipse Public License - v 1.0" url="https://www.eclipse.org/legal/epl-v10.html"/>
 				<license name="Eclipse Distribution License - v 1.0" url="https://www.eclipse.org/licenses/edl-v10.html"/>
 				<metadata-artifact status="no" details="" size="5899" time="0" location="/home/ben/.ivy2/cache/org.eclipse.collections/eclipse-collections-api/ivy-9.1.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/eclipse/collections/eclipse-collections-api/9.1.0/eclipse-collections-api-9.1.0.pom"/>
@@ -822,7 +918,7 @@
 			</revision>
 		</module>
 		<module organisation="org.threadly" name="threadly">
-			<revision name="4.10.0" status="release" pubdate="20180312172147" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://threadly.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="61">
+			<revision name="4.10.0" status="release" pubdate="20180312172147" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://threadly.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="62">
 				<license name="Mozilla Public License Version 2.0" url="https://www.mozilla.org/MPL/2.0/"/>
 				<metadata-artifact status="no" details="" size="2739" time="0" location="/home/ben/.ivy2/cache/org.threadly/threadly/ivy-4.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/threadly/threadly/4.10.0/threadly-4.10.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="4.10.0" rev-constraint-default="4.10.0" rev-constraint-dynamic="4.10.0" callerrev="1.0.3"/>
@@ -846,7 +942,7 @@
 			</revision>
 		</module>
 		<module organisation="org.nd4j" name="nd4j-jackson">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405163245" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="53">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405163245" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="54">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="9079" time="0" location="/home/ben/.ivy2/cache/org.nd4j/nd4j-jackson/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/nd4j/nd4j-jackson/1.0.0-alpha/nd4j-jackson-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -932,7 +1028,7 @@
 			</revision>
 		</module>
 		<module organisation="uk.com.robust-it" name="cloning">
-			<revision name="1.9.3" status="release" pubdate="20160918164933" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://code.google.com/p/cloning/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="247">
+			<revision name="1.9.3" status="release" pubdate="20160918164933" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://code.google.com/p/cloning/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="248">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="3925" time="0" location="/home/ben/.ivy2/cache/uk.com.robust-it/cloning/ivy-1.9.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/uk/com/robust-it/cloning/1.9.3/cloning-1.9.3.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.9.3" rev-constraint-default="1.9.3" rev-constraint-dynamic="1.9.3" callerrev="1.0.3"/>
@@ -944,7 +1040,7 @@
 			</revision>
 		</module>
 		<module organisation="com.github.os72" name="protobuf-java-util-shaded-351">
-			<revision name="0.9" status="release" pubdate="20180131211048" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="68">
+			<revision name="0.9" status="release" pubdate="20180131211048" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="69">
 				<license name="3-Clause BSD License" url="https://opensource.org/licenses/BSD-3-Clause"/>
 				<metadata-artifact status="no" details="" size="6155" time="0" location="/home/ben/.ivy2/cache/com.github.os72/protobuf-java-util-shaded-351/ivy-0.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/os72/protobuf-java-util-shaded-351/0.9/protobuf-java-util-shaded-351-0.9.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="0.9" rev-constraint-default="0.9" rev-constraint-dynamic="0.9" callerrev="1.0.3"/>
@@ -1004,7 +1100,7 @@
 			</revision>
 		</module>
 		<module organisation="org.nd4j" name="nd4j-common">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405163320" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="20">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405163320" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="21">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="9288" time="0" location="/home/ben/.ivy2/cache/org.nd4j/nd4j-common/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/nd4j/nd4j-common/1.0.0-alpha/nd4j-common-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -1016,7 +1112,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.commons" name="commons-compress">
-			<revision name="1.16.1" status="release" pubdate="20180207004529" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-compress/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="39">
+			<revision name="1.16.1" status="release" pubdate="20180207004529" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-compress/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="40">
 				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="13416" time="0" location="/home/ben/.ivy2/cache/org.apache.commons/commons-compress/ivy-1.16.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/commons/commons-compress/1.16.1/commons-compress-1.16.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.16.1" rev-constraint-default="1.16.1" rev-constraint-dynamic="1.16.1" callerrev="1.0.3"/>
@@ -1028,7 +1124,7 @@
 			</revision>
 		</module>
 		<module organisation="org.objenesis" name="objenesis">
-			<revision name="2.6" status="release" pubdate="20170620102837" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://objenesis.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="200">
+			<revision name="2.6" status="release" pubdate="20170620102837" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://objenesis.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="201">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3457" time="0" location="/home/ben/.ivy2/cache/org.objenesis/objenesis/ivy-2.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/objenesis/objenesis/2.6/objenesis-2.6.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6" rev-constraint-default="2.6" rev-constraint-dynamic="2.6" callerrev="1.0.3"/>
@@ -1040,7 +1136,7 @@
 			</revision>
 		</module>
 		<module organisation="org.reflections" name="reflections">
-			<revision name="0.9.10" status="release" pubdate="20150516044630" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/ronmamo/reflections" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="62">
+			<revision name="0.9.10" status="release" pubdate="20150516044630" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/ronmamo/reflections" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="63">
 				<license name="WTFPL" url="http://www.wtfpl.net/"/>
 				<license name="The New BSD License" url="http://www.opensource.org/licenses/bsd-license.html"/>
 				<metadata-artifact status="no" details="" size="4248" time="0" location="/home/ben/.ivy2/cache/org.reflections/reflections/ivy-0.9.10.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/reflections/reflections/0.9.10/reflections-0.9.10.pom"/>
@@ -1053,7 +1149,7 @@
 			</revision>
 		</module>
 		<module organisation="org.javassist" name="javassist">
-			<revision name="3.18.2-GA" status="release" pubdate="20140527115509" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="23">
+			<revision name="3.18.2-GA" status="release" pubdate="20140527115509" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.javassist.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="24">
 				<license name="MPL 1.1" url="http://www.mozilla.org/MPL/MPL-1.1.html"/>
 				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.html"/>
 				<license name="Apache License 2.0" url="http://www.apache.org/licenses/"/>
@@ -1067,7 +1163,7 @@
 			</revision>
 		</module>
 		<module organisation="org.nd4j" name="jackson">
-			<revision name="1.0.0-alpha" status="release" pubdate="20180405163301" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="25">
+			<revision name="1.0.0-alpha" status="release" pubdate="20180405163301" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="26">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="8992" time="0" location="/home/ben/.ivy2/cache/org.nd4j/jackson/ivy-1.0.0-alpha.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/nd4j/jackson/1.0.0-alpha/jackson-1.0.0-alpha.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-alpha" rev-constraint-default="1.0.0-alpha" rev-constraint-dynamic="1.0.0-alpha" callerrev="1.0.3"/>
@@ -1091,7 +1187,7 @@
 			</revision>
 		</module>
 		<module organisation="org.codehaus.woodstox" name="stax2-api">
-			<revision name="3.1.4" status="release" pubdate="20140228002027" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/WoodstoxStax2" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="50">
+			<revision name="3.1.4" status="release" pubdate="20140228002027" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/WoodstoxStax2" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="51">
 				<license name="The BSD License" url="http://www.opensource.org/licenses/bsd-license.php"/>
 				<metadata-artifact status="no" details="" size="3477" time="0" location="/home/ben/.ivy2/cache/org.codehaus.woodstox/stax2-api/ivy-3.1.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.1.4" rev-constraint-default="3.1.4" rev-constraint-dynamic="3.1.4" callerrev="1.0.3"/>
@@ -1143,7 +1239,7 @@
 			</revision>
 		</module>
 		<module organisation="org.bytedeco" name="javacpp">
-			<revision name="1.4.1" status="release" pubdate="20180328060906" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://bytedeco.org/javacpp/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="43">
+			<revision name="1.4.1" status="release" pubdate="20180328060906" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://bytedeco.org/javacpp/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="44">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<license name="GNU General Public License (GPL) version 2, or any later version" url="http://www.gnu.org/licenses/"/>
 				<license name="GPLv2 with Classpath exception" url="http://www.gnu.org/software/classpath/license.html"/>
@@ -1156,12 +1252,24 @@
 				</artifacts>
 			</revision>
 		</module>
+		<module organisation="com.thoughtworks.paranamer" name="paranamer">
+			<revision name="2.8" status="release" pubdate="20150826062928" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="13">
+				<license name="BSD" url="LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="4254" time="0" location="/home/ben/.ivy2/cache/com.thoughtworks.paranamer/paranamer/ivy-2.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.pom"/>
+				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.8" rev-constraint-default="2.8" rev-constraint-dynamic="2.8" callerrev="1.0.3"/>
+				<artifacts>
+					<artifact name="paranamer" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="27125" time="0" location="/home/ben/.ivy2/cache/com.thoughtworks.paranamer/paranamer/srcs/paranamer-2.8-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="net.jcip" name="jcip-annotations">
 			<revision name="1.0" status="release" pubdate="20080814014805" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jcip.net/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="10">
 				<metadata-artifact status="no" details="" size="2341" time="0" location="/home/ben/.ivy2/cache/net.jcip/jcip-annotations/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.0.3"/>
 				<artifacts>
-					<artifact name="jcip-annotations" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="5002" time="134" location="/home/ben/.ivy2/cache/net.jcip/jcip-annotations/srcs/jcip-annotations-1.0-sources.jar">
+					<artifact name="jcip-annotations" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="5002" time="0" location="/home/ben/.ivy2/cache/net.jcip/jcip-annotations/srcs/jcip-annotations-1.0-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1170,7 +1278,7 @@
 		<module organisation="org.apache.spark" name="spark-sql_2.11">
 			<revision name="2.2.0" status="release" pubdate="20170630194049" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="9">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="10225" time="75" location="/home/ben/.ivy2/cache/org.apache.spark/spark-sql_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-sql_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.11/2.2.0/spark-sql_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="10225" time="84" location="/home/ben/.ivy2/cache/org.apache.spark/spark-sql_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-sql_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-sql_2.11/2.2.0/spark-sql_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-sql_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="882521" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-sql_2.11/srcs/spark-sql_2.11-2.2.0-sources.jar">
@@ -1180,9 +1288,9 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.spark" name="spark-catalyst_2.11">
-			<revision name="2.2.0" status="release" pubdate="20170630193800" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="76">
+			<revision name="2.2.0" status="release" pubdate="20170630193800" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="77">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="8165" time="70" location="/home/ben/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.11/2.2.0/spark-catalyst_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="8165" time="72" location="/home/ben/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-catalyst_2.11/2.2.0/spark-catalyst_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-catalyst_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="871074" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-catalyst_2.11/srcs/spark-catalyst_2.11-2.2.0-sources.jar">
@@ -1204,7 +1312,7 @@
 			</revision>
 		</module>
 		<module organisation="org.antlr" name="antlr4-runtime">
-			<revision name="4.5.3" status="release" pubdate="20160330183535" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="13">
+			<revision name="4.5.3" status="release" pubdate="20160330183535" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="14">
 				<license name="The BSD License" url="http://www.antlr.org/license.html"/>
 				<metadata-artifact status="no" details="" size="3392" time="0" location="/home/ben/.ivy2/cache/org.antlr/antlr4-runtime/ivy-4.5.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/antlr/antlr4-runtime/4.5.3/antlr4-runtime-4.5.3.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="4.5.3" rev-constraint-default="4.5.3" rev-constraint-dynamic="4.5.3" callerrev="1.0.3"/>
@@ -1216,7 +1324,7 @@
 			</revision>
 		</module>
 		<module organisation="org.codehaus.janino" name="janino">
-			<revision name="3.0.0" status="release" pubdate="20160707144521" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="36">
+			<revision name="3.0.0" status="release" pubdate="20160707144521" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="37">
 				<license name="New BSD License" url="http://dist.codehaus.org/janino/new_bsd_license.txt"/>
 				<metadata-artifact status="no" details="" size="5028" time="0" location="/home/ben/.ivy2/cache/org.codehaus.janino/janino/ivy-3.0.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/codehaus/janino/janino/3.0.0/janino-3.0.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.0.0" rev-constraint-default="3.0.0" rev-constraint-dynamic="3.0.0" callerrev="1.0.3"/>
@@ -1242,7 +1350,7 @@
 		<module organisation="org.apache.spark" name="spark-core_2.11">
 			<revision name="2.2.0" status="release" pubdate="20170630193432" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="161">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="21322" time="68" location="/home/ben/.ivy2/cache/org.apache.spark/spark-core_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-core_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.11/2.2.0/spark-core_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="21322" time="79" location="/home/ben/.ivy2/cache/org.apache.spark/spark-core_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-core_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.11/2.2.0/spark-core_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-core_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1785970" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-core_2.11/srcs/spark-core_2.11-2.2.0-sources.jar">
@@ -1312,7 +1420,7 @@
 			</revision>
 		</module>
 		<module organisation="io.dropwizard.metrics" name="metrics-json">
-			<revision name="3.1.2" status="release" pubdate="20150425230149" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="33">
+			<revision name="3.1.2" status="release" pubdate="20150425230149" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="34">
 				<license name="Apache License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="5424" time="0" location="/home/ben/.ivy2/cache/io.dropwizard.metrics/metrics-json/ivy-3.1.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-json/3.1.2/metrics-json-3.1.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.1.2" rev-constraint-default="3.1.2" rev-constraint-dynamic="3.1.2" callerrev="1.0.3"/>
@@ -1324,7 +1432,7 @@
 			</revision>
 		</module>
 		<module organisation="io.dropwizard.metrics" name="metrics-jvm">
-			<revision name="3.1.2" status="release" pubdate="20150425225923" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="203">
+			<revision name="3.1.2" status="release" pubdate="20150425225923" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="204">
 				<license name="Apache License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="5156" time="0" location="/home/ben/.ivy2/cache/io.dropwizard.metrics/metrics-jvm/ivy-3.1.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-jvm/3.1.2/metrics-jvm-3.1.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.1.2" rev-constraint-default="3.1.2" rev-constraint-dynamic="3.1.2" callerrev="1.0.3"/>
@@ -1360,7 +1468,7 @@
 			</revision>
 		</module>
 		<module organisation="org.glassfish.jersey.containers" name="jersey-container-servlet">
-			<revision name="2.22.2" status="release" pubdate="20160216063036" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="28">
+			<revision name="2.22.2" status="release" pubdate="20160216063036" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="29">
 				<license name="CDDL+GPL License" url="http://glassfish.java.net/public/CDDL+GPL_1_1.html"/>
 				<metadata-artifact status="no" details="" size="35227" time="0" location="/home/ben/.ivy2/cache/org.glassfish.jersey.containers/jersey-container-servlet/ivy-2.22.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/glassfish/jersey/containers/jersey-container-servlet/2.22.2/jersey-container-servlet-2.22.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.22.2" rev-constraint-default="2.22.2" rev-constraint-dynamic="2.22.2" callerrev="1.0.3"/>
@@ -1396,7 +1504,7 @@
 			</revision>
 		</module>
 		<module organisation="javax.validation" name="validation-api">
-			<revision name="1.1.0.Final" status="release" pubdate="20130410080303" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://beanvalidation.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="190">
+			<revision name="1.1.0.Final" status="release" pubdate="20130410080303" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://beanvalidation.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="192">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3200" time="0" location="/home/ben/.ivy2/cache/javax.validation/validation-api/ivy-1.1.0.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.1.0.Final" rev-constraint-default="1.1.0.Final" rev-constraint-dynamic="1.1.0.Final" callerrev="1.0.3"/>
@@ -1408,7 +1516,7 @@
 			</revision>
 		</module>
 		<module organisation="org.glassfish.jersey.media" name="jersey-media-jaxb">
-			<revision name="2.22.2" status="release" pubdate="20160216062855" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="14">
+			<revision name="2.22.2" status="release" pubdate="20160216062855" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="15">
 				<license name="CDDL+GPL License" url="http://glassfish.java.net/public/CDDL+GPL_1_1.html"/>
 				<metadata-artifact status="no" details="" size="35538" time="0" location="/home/ben/.ivy2/cache/org.glassfish.jersey.media/jersey-media-jaxb/ivy-2.22.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/glassfish/jersey/media/jersey-media-jaxb/2.22.2/jersey-media-jaxb-2.22.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.22.2" rev-constraint-default="2.22.2" rev-constraint-dynamic="2.22.2" callerrev="1.0.3"/>
@@ -1420,7 +1528,7 @@
 			</revision>
 		</module>
 		<module organisation="org.glassfish.jersey.core" name="jersey-client">
-			<revision name="2.22.2" status="release" pubdate="20160216062834" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="197">
+			<revision name="2.22.2" status="release" pubdate="20160216062834" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="199">
 				<license name="CDDL+GPL License" url="http://glassfish.java.net/public/CDDL+GPL_1_1.html"/>
 				<metadata-artifact status="no" details="" size="35308" time="0" location="/home/ben/.ivy2/cache/org.glassfish.jersey.core/jersey-client/ivy-2.22.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/glassfish/jersey/core/jersey-client/2.22.2/jersey-client-2.22.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.22.2" rev-constraint-default="2.22.2" rev-constraint-dynamic="2.22.2" callerrev="1.0.3"/>
@@ -1432,7 +1540,7 @@
 			</revision>
 		</module>
 		<module organisation="org.glassfish.jersey.core" name="jersey-common">
-			<revision name="2.22.2" status="release" pubdate="20160216062814" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="244">
+			<revision name="2.22.2" status="release" pubdate="20160216062814" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="245">
 				<license name="CDDL+GPL License" url="http://glassfish.java.net/public/CDDL+GPL_1_1.html"/>
 				<metadata-artifact status="no" details="" size="36007" time="0" location="/home/ben/.ivy2/cache/org.glassfish.jersey.core/jersey-common/ivy-2.22.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/glassfish/jersey/core/jersey-common/2.22.2/jersey-common-2.22.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.22.2" rev-constraint-default="2.22.2" rev-constraint-dynamic="2.22.2" callerrev="1.0.3"/>
@@ -1504,7 +1612,7 @@
 			</revision>
 		</module>
 		<module organisation="org.glassfish.hk2" name="osgi-resource-locator">
-			<revision name="1.0.1" status="release" pubdate="20110113090008" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="211">
+			<revision name="1.0.1" status="release" pubdate="20110113090008" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="212">
 				<license name="CDDL + GPLv2 with classpath exception" url="https://glassfish.dev.java.net/nonav/public/CDDL+GPL.html"/>
 				<metadata-artifact status="no" details="" size="3175" time="0" location="/home/ben/.ivy2/cache/org.glassfish.hk2/osgi-resource-locator/ivy-1.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.1" rev-constraint-default="1.0.1" rev-constraint-dynamic="1.0.1" callerrev="1.0.3"/>
@@ -1560,102 +1668,6 @@
 				<artifacts>
 					<artifact name="json4s-jackson_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="7083" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-jackson_2.11/srcs/json4s-jackson_2.11-3.2.11-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/json4s/json4s-jackson_2.11/3.2.11/json4s-jackson_2.11-3.2.11-sources.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.json4s" name="json4s-core_2.11">
-			<revision name="3.2.11" status="release" pubdate="20141023201034" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="181">
-				<license name="ASL" url="http://github.com/json4s/json4s/raw/HEAD/LICENSE"/>
-				<metadata-artifact status="no" details="" size="3088" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-core_2.11/ivy-3.2.11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/json4s/json4s-core_2.11/3.2.11/json4s-core_2.11-3.2.11.pom"/>
-				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.2.11" rev-constraint-default="3.2.11" rev-constraint-dynamic="3.2.11" callerrev="1.0.3"/>
-				<artifacts>
-					<artifact name="json4s-core_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="39377" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-core_2.11/srcs/json4s-core_2.11-3.2.11-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/json4s/json4s-core_2.11/3.2.11/json4s-core_2.11-3.2.11-sources.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.scala-lang" name="scalap">
-			<revision name="2.11.0" status="release" pubdate="20140416041427" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="213">
-				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="2640" time="0" location="/home/ben/.ivy2/cache/org.scala-lang/scalap/ivy-2.11.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scalap/2.11.0/scalap-2.11.0.pom"/>
-				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.11.0" rev-constraint-default="2.11.0" rev-constraint-dynamic="2.11.0" callerrev="1.0.3"/>
-				<artifacts>
-					<artifact name="scalap" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="36634" time="0" location="/home/ben/.ivy2/cache/org.scala-lang/scalap/srcs/scalap-2.11.0-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scalap/2.11.0/scalap-2.11.0-sources.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.scala-lang" name="scala-compiler">
-			<revision name="2.11.0" status="release" pubdate="20140416041405" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="74">
-				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="3257" time="0" location="/home/ben/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.11.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.11.0/scala-compiler-2.11.0.pom"/>
-				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.11.0" rev-constraint-default="2.11.0" rev-constraint-dynamic="2.11.0" callerrev="1.0.3"/>
-				<artifacts>
-					<artifact name="scala-compiler" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2077837" time="0" location="/home/ben/.ivy2/cache/org.scala-lang/scala-compiler/srcs/scala-compiler-2.11.0-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.11.0/scala-compiler-2.11.0-sources.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.scala-lang.modules" name="scala-xml_2.11">
-			<revision name="1.0.1" status="release" pubdate="20140416042108" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="77">
-				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="no" details="" size="3137" time="0" location="/home/ben/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/ivy-1.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.1/scala-xml_2.11-1.0.1.pom"/>
-				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.1" rev-constraint-default="1.0.1" rev-constraint-dynamic="1.0.1" callerrev="1.0.3"/>
-				<artifacts>
-					<artifact name="scala-xml_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="109171" time="0" location="/home/ben/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/srcs/scala-xml_2.11-1.0.1-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.1/scala-xml_2.11-1.0.1-sources.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.scala-lang.modules" name="scala-parser-combinators_2.11">
-			<revision name="1.0.1" status="release" pubdate="20140416042222" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="229">
-				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="no" details="" size="2929" time="0" location="/home/ben/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/ivy-1.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.pom"/>
-				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.1" rev-constraint-default="1.0.1" rev-constraint-dynamic="1.0.1" callerrev="1.0.3"/>
-				<artifacts>
-					<artifact name="scala-parser-combinators_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="41398" time="0" location="/home/ben/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/srcs/scala-parser-combinators_2.11-1.0.1-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1-sources.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.11.0" status="release" pubdate="20140416041350" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.0/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="226">
-				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
-				<metadata-artifact status="no" details="" size="2825" time="0" location="/home/ben/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.0/scala-reflect-2.11.0.pom"/>
-				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.11.0" rev-constraint-default="2.11.0" rev-constraint-dynamic="2.11.0" callerrev="1.0.3" extra-info.apiURL="http://www.scala-lang.org/api/2.11.0/"/>
-				<artifacts>
-					<artifact name="scala-reflect" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="554963" time="0" location="/home/ben/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.11.0-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.0/scala-reflect-2.11.0-sources.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="com.thoughtworks.paranamer" name="paranamer">
-			<revision name="2.6" status="release" pubdate="20131008225654" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="199">
-				<license name="BSD" url="LICENSE.txt"/>
-				<metadata-artifact status="no" details="" size="4202" time="0" location="/home/ben/.ivy2/cache/com.thoughtworks.paranamer/paranamer/ivy-2.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.pom"/>
-				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6" rev-constraint-default="2.6" rev-constraint-dynamic="2.6" callerrev="1.0.3"/>
-				<artifacts>
-					<artifact name="paranamer" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="26517" time="0" location="/home/ben/.ivy2/cache/com.thoughtworks.paranamer/paranamer/srcs/paranamer-2.6-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6-sources.jar"/>
-					</artifact>
-				</artifacts>
-			</revision>
-		</module>
-		<module organisation="org.json4s" name="json4s-ast_2.11">
-			<revision name="3.2.11" status="release" pubdate="20141023201004" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/json4s/json4s" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="89">
-				<license name="ASL" url="http://github.com/json4s/json4s/raw/HEAD/LICENSE"/>
-				<metadata-artifact status="no" details="" size="2648" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-ast_2.11/ivy-3.2.11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/json4s/json4s-ast_2.11/3.2.11/json4s-ast_2.11-3.2.11.pom"/>
-				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.2.11" rev-constraint-default="3.2.11" rev-constraint-dynamic="3.2.11" callerrev="1.0.3"/>
-				<artifacts>
-					<artifact name="json4s-ast_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="7279" time="0" location="/home/ben/.ivy2/cache/org.json4s/json4s-ast_2.11/srcs/json4s-ast_2.11-3.2.11-sources.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/json4s/json4s-ast_2.11/3.2.11/json4s-ast_2.11-3.2.11-sources.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
@@ -1757,7 +1769,7 @@
 			</revision>
 		</module>
 		<module organisation="net.java.dev.jets3t" name="jets3t">
-			<revision name="0.9.3" status="release" pubdate="20150131154344" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://bitbucket.org/jmurty/jets3t/overview" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="41">
+			<revision name="0.9.3" status="release" pubdate="20150131154344" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://bitbucket.org/jmurty/jets3t/overview" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="42">
 				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="6432" time="0" location="/home/ben/.ivy2/cache/net.java.dev.jets3t/jets3t/ivy-0.9.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/java/dev/jets3t/jets3t/0.9.3/jets3t-0.9.3.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="0.9.3" rev-constraint-default="0.9.3" rev-constraint-dynamic="0.9.3" callerrev="1.0.3"/>
@@ -1781,7 +1793,7 @@
 			</revision>
 		</module>
 		<module organisation="net.iharder" name="base64">
-			<revision name="2.3.8" status="release" pubdate="20100326204244" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://iharder.net/base64/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="47">
+			<revision name="2.3.8" status="release" pubdate="20100326204244" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://iharder.net/base64/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="48">
 				<license name="Public domain"/>
 				<metadata-artifact status="no" details="" size="3061" time="0" location="/home/ben/.ivy2/cache/net.iharder/base64/ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/iharder/base64/2.3.8/base64-2.3.8.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="1.0.3"/>
@@ -1832,7 +1844,7 @@
 		<module organisation="org.apache.spark" name="spark-unsafe_2.11">
 			<revision name="2.2.0" status="release" pubdate="20170630193350" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="155">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="4906" time="82" location="/home/ben/.ivy2/cache/org.apache.spark/spark-unsafe_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-unsafe_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.11/2.2.0/spark-unsafe_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="4906" time="75" location="/home/ben/.ivy2/cache/org.apache.spark/spark-unsafe_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-unsafe_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.11/2.2.0/spark-unsafe_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-unsafe_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="40068" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-unsafe_2.11/srcs/spark-unsafe_2.11-2.2.0-sources.jar">
@@ -1842,9 +1854,9 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.spark" name="spark-launcher_2.11">
-			<revision name="2.2.0" status="release" pubdate="20170630193817" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="194">
+			<revision name="2.2.0" status="release" pubdate="20170630193817" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="196">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="6429" time="92" location="/home/ben/.ivy2/cache/org.apache.spark/spark-launcher_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-launcher_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.11/2.2.0/spark-launcher_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="6429" time="73" location="/home/ben/.ivy2/cache/org.apache.spark/spark-launcher_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-launcher_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.11/2.2.0/spark-launcher_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-launcher_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="47225" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-launcher_2.11/srcs/spark-launcher_2.11-2.2.0-sources.jar">
@@ -1937,7 +1949,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-mapreduce-client-common">
-			<revision name="2.6.5" status="release" pubdate="20161002182418" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="73">
+			<revision name="2.6.5" status="release" pubdate="20161002182418" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="74">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="34888" time="0" location="/home/ben/.ivy2/cache/org.apache.hadoop/hadoop-mapreduce-client-common/ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-common/2.6.5/hadoop-mapreduce-client-common-2.6.5.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="1.0.3"/>
@@ -1949,7 +1961,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-client">
-			<revision name="2.6.5" status="release" pubdate="20161002182230" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="212">
+			<revision name="2.6.5" status="release" pubdate="20161002182230" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="213">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="34768" time="0" location="/home/ben/.ivy2/cache/org.apache.hadoop/hadoop-yarn-client/ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-client/2.6.5/hadoop-yarn-client-2.6.5.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="1.0.3"/>
@@ -1961,7 +1973,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-server-common">
-			<revision name="2.6.5" status="release" pubdate="20161002182026" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="208">
+			<revision name="2.6.5" status="release" pubdate="20161002182026" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="209">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="35915" time="0" location="/home/ben/.ivy2/cache/org.apache.hadoop/hadoop-yarn-server-common/ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-server-common/2.6.5/hadoop-yarn-server-common-2.6.5.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="1.0.3"/>
@@ -1986,7 +1998,7 @@
 			</revision>
 		</module>
 		<module organisation="com.twitter" name="chill_2.11">
-			<revision name="0.8.0" status="release" pubdate="20160211133000" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/chill" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="26">
+			<revision name="0.8.0" status="release" pubdate="20160211133000" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/chill" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="27">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3175" time="0" location="/home/ben/.ivy2/cache/com.twitter/chill_2.11/ivy-0.8.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/chill_2.11/0.8.0/chill_2.11-0.8.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="0.8.0" rev-constraint-default="0.8.0" rev-constraint-dynamic="0.8.0" callerrev="1.0.3"/>
@@ -2034,7 +2046,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.avro" name="avro-mapred">
-			<revision name="1.7.7" status="release" pubdate="20140718150958" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="202">
+			<revision name="1.7.7" status="release" pubdate="20140718150958" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="203">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="11249" time="0" location="/home/ben/.ivy2/cache/org.apache.avro/avro-mapred/ivy-1.7.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/avro/avro-mapred/1.7.7/avro-mapred-1.7.7.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="1.0.3"/>
@@ -2058,7 +2070,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.avro" name="avro">
-			<revision name="1.7.7" status="release" pubdate="20140718150856" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://avro.apache.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="79">
+			<revision name="1.7.7" status="release" pubdate="20140718150856" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://avro.apache.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="80">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="11109" time="0" location="/home/ben/.ivy2/cache/org.apache.avro/avro/ivy-1.7.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/avro/avro/1.7.7/avro-1.7.7.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="1.0.3"/>
@@ -2072,7 +2084,7 @@
 		<module organisation="org.apache.spark" name="spark-sketch_2.11">
 			<revision name="2.2.0" status="release" pubdate="20170630193639" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="109">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="3268" time="77" location="/home/ben/.ivy2/cache/org.apache.spark/spark-sketch_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-sketch_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.11/2.2.0/spark-sketch_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="3268" time="73" location="/home/ben/.ivy2/cache/org.apache.spark/spark-sketch_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-sketch_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-sketch_2.11/2.2.0/spark-sketch_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-sketch_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="24591" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-sketch_2.11/srcs/spark-sketch_2.11-2.2.0-sources.jar">
@@ -2082,7 +2094,7 @@
 			</revision>
 		</module>
 		<module organisation="com.univocity" name="univocity-parsers">
-			<revision name="2.2.1" status="release" pubdate="20160821222505" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/uniVocity/univocity-parsers" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="88">
+			<revision name="2.2.1" status="release" pubdate="20160821222505" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/uniVocity/univocity-parsers" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="89">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3895" time="0" location="/home/ben/.ivy2/cache/com.univocity/univocity-parsers/ivy-2.2.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/univocity/univocity-parsers/2.2.1/univocity-parsers-2.2.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.1" rev-constraint-default="2.2.1" rev-constraint-dynamic="2.2.1" callerrev="1.0.3"/>
@@ -2106,7 +2118,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.httpcomponents" name="httpcore">
-			<revision name="4.4.4" status="release" pubdate="20151026121814" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-core-ga" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="35">
+			<revision name="4.4.4" status="release" pubdate="20151026121814" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-core-ga" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="36">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="7705" time="0" location="/home/ben/.ivy2/cache/org.apache.httpcomponents/httpcore/ivy-4.4.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="4.4.4" rev-constraint-default="4.4.4" rev-constraint-dynamic="4.4.4" callerrev="1.0.3"/>
@@ -2118,7 +2130,7 @@
 			</revision>
 		</module>
 		<module organisation="commons-logging" name="commons-logging">
-			<revision name="1.2" status="release" pubdate="20140705131228" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-logging/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="84">
+			<revision name="1.2" status="release" pubdate="20140705131228" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-logging/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="85">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="11623" time="0" location="/home/ben/.ivy2/cache/commons-logging/commons-logging/ivy-1.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.2" rev-constraint-default="1.2" rev-constraint-dynamic="1.2" callerrev="1.0.3"/>
@@ -2142,7 +2154,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-hdfs">
-			<revision name="2.6.5" status="release" pubdate="20161002181335" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="48">
+			<revision name="2.6.5" status="release" pubdate="20161002181335" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="49">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="37833" time="0" location="/home/ben/.ivy2/cache/org.apache.hadoop/hadoop-hdfs/ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/2.6.5/hadoop-hdfs-2.6.5.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="1.0.3"/>
@@ -2154,7 +2166,7 @@
 			</revision>
 		</module>
 		<module organisation="xerces" name="xercesImpl">
-			<revision name="2.9.1" status="release" pubdate="20081001171919" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://xerces.apache.org/xerces2-j" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="29">
+			<revision name="2.9.1" status="release" pubdate="20081001171919" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://xerces.apache.org/xerces2-j" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="30">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3198" time="0" location="/home/ben/.ivy2/cache/xerces/xercesImpl/ivy-2.9.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.9.1" rev-constraint-default="2.9.1" rev-constraint-dynamic="2.9.1" callerrev="1.0.3"/>
@@ -2166,7 +2178,7 @@
 			</revision>
 		</module>
 		<module organisation="xml-apis" name="xml-apis">
-			<revision name="1.3.04" status="release" pubdate="20061222073752" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://xml.apache.org/commons/components/external/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="82">
+			<revision name="1.3.04" status="release" pubdate="20061222073752" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://xml.apache.org/commons/components/external/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="83">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3060" time="0" location="/home/ben/.ivy2/cache/xml-apis/xml-apis/ivy-1.3.04.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.3.04" rev-constraint-default="1.3.04" rev-constraint-dynamic="1.3.04" callerrev="1.0.3"/>
@@ -2178,7 +2190,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-common">
-			<revision name="2.6.5" status="release" pubdate="20161002181957" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="189">
+			<revision name="2.6.5" status="release" pubdate="20161002181957" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="191">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="36092" time="0" location="/home/ben/.ivy2/cache/org.apache.hadoop/hadoop-yarn-common/ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-common/2.6.5/hadoop-yarn-common-2.6.5.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="1.0.3"/>
@@ -2214,7 +2226,7 @@
 			</revision>
 		</module>
 		<module organisation="aopalliance" name="aopalliance">
-			<revision name="1.0" status="release" pubdate="20070226164340" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://aopalliance.sourceforge.net" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="210">
+			<revision name="1.0" status="release" pubdate="20070226164340" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://aopalliance.sourceforge.net" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="211">
 				<license name="Public Domain"/>
 				<metadata-artifact status="no" details="" size="2417" time="0" location="/home/ben/.ivy2/cache/aopalliance/aopalliance/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.0.3"/>
@@ -2238,7 +2250,7 @@
 			</revision>
 		</module>
 		<module organisation="org.codehaus.jackson" name="jackson-xc">
-			<revision name="1.9.13" status="release" pubdate="20130714220852" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="193">
+			<revision name="1.9.13" status="release" pubdate="20130714220852" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="195">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<license name="GNU Lesser General Public License (LGPL), Version 2.1" url="http://www.fsf.org/licensing/licenses/lgpl.txt"/>
 				<metadata-artifact status="no" details="" size="3073" time="0" location="/home/ben/.ivy2/cache/org.codehaus.jackson/jackson-xc/ivy-1.9.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/codehaus/jackson/jackson-xc/1.9.13/jackson-xc-1.9.13.pom"/>
@@ -2251,7 +2263,7 @@
 			</revision>
 		</module>
 		<module organisation="org.codehaus.jackson" name="jackson-jaxrs">
-			<revision name="1.9.13" status="release" pubdate="20130714220844" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="40">
+			<revision name="1.9.13" status="release" pubdate="20130714220844" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="41">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<license name="GNU Lesser General Public License (LGPL), Version 2.1" url="http://www.fsf.org/licensing/licenses/lgpl.txt"/>
 				<metadata-artifact status="no" details="" size="3075" time="0" location="/home/ben/.ivy2/cache/org.codehaus.jackson/jackson-jaxrs/ivy-1.9.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/codehaus/jackson/jackson-jaxrs/1.9.13/jackson-jaxrs-1.9.13.pom"/>
@@ -2264,7 +2276,7 @@
 			</revision>
 		</module>
 		<module organisation="javax.xml.bind" name="jaxb-api">
-			<revision name="2.2.2" status="release" pubdate="20101212214445" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://jaxb.dev.java.net/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="243">
+			<revision name="2.2.2" status="release" pubdate="20101212214445" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://jaxb.dev.java.net/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="244">
 				<license name="CDDL 1.1" url="https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html"/>
 				<license name="GPL2 w/ CPE" url="https://glassfish.dev.java.net/public/CDDL+GPL_1_1.html"/>
 				<metadata-artifact status="no" details="" size="2997" time="0" location="/home/ben/.ivy2/cache/javax.xml.bind/jaxb-api/ivy-2.2.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/xml/bind/jaxb-api/2.2.2/jaxb-api-2.2.2.pom"/>
@@ -2290,7 +2302,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-api">
-			<revision name="2.6.5" status="release" pubdate="20161002181918" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="195">
+			<revision name="2.6.5" status="release" pubdate="20161002181918" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="197">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="31902" time="0" location="/home/ben/.ivy2/cache/org.apache.hadoop/hadoop-yarn-api/ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-api/2.6.5/hadoop-yarn-api-2.6.5.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="1.0.3"/>
@@ -2338,7 +2350,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-auth">
-			<revision name="2.6.5" status="release" pubdate="20161002180725" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="31">
+			<revision name="2.6.5" status="release" pubdate="20161002180725" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="32">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="32556" time="0" location="/home/ben/.ivy2/cache/org.apache.hadoop/hadoop-auth/ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-auth/2.6.5/hadoop-auth-2.6.5.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="1.0.3"/>
@@ -2350,7 +2362,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.curator" name="curator-framework">
-			<revision name="2.6.0" status="release" pubdate="20140707220112" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="51">
+			<revision name="2.6.0" status="release" pubdate="20140707220112" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="52">
 				<license name="The Apache Software License, Version 2.0" url="file:///home/ben/git/nsq-spark-receiver/LICENSE"/>
 				<metadata-artifact status="no" details="" size="13427" time="0" location="/home/ben/.ivy2/cache/org.apache.curator/curator-framework/ivy-2.6.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/curator/curator-framework/2.6.0/curator-framework-2.6.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6.0" rev-constraint-default="2.6.0" rev-constraint-dynamic="2.6.0" callerrev="1.0.3"/>
@@ -2362,7 +2374,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.curator" name="curator-client">
-			<revision name="2.6.0" status="release" pubdate="20140707220047" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="87">
+			<revision name="2.6.0" status="release" pubdate="20140707220047" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="88">
 				<license name="The Apache Software License, Version 2.0" url="file:///home/ben/git/nsq-spark-receiver/LICENSE"/>
 				<metadata-artifact status="no" details="" size="13474" time="0" location="/home/ben/.ivy2/cache/org.apache.curator/curator-client/ivy-2.6.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/curator/curator-client/2.6.0/curator-client-2.6.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6.0" rev-constraint-default="2.6.0" rev-constraint-dynamic="2.6.0" callerrev="1.0.3"/>
@@ -2397,7 +2409,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.directory.server" name="apacheds-kerberos-codec">
-			<revision name="2.0.0-M15" status="release" pubdate="20130814100537" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="182">
+			<revision name="2.0.0-M15" status="release" pubdate="20130814100537" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="181">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="26789" time="0" location="/home/ben/.ivy2/cache/org.apache.directory.server/apacheds-kerberos-codec/ivy-2.0.0-M15.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/directory/server/apacheds-kerberos-codec/2.0.0-M15/apacheds-kerberos-codec-2.0.0-M15.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.0.0-M15" rev-constraint-default="2.0.0-M15" rev-constraint-dynamic="2.0.0-M15" callerrev="1.0.3"/>
@@ -2421,7 +2433,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.directory.api" name="api-asn1-api">
-			<revision name="1.0.0-M20" status="release" pubdate="20130814033000" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="37">
+			<revision name="1.0.0-M20" status="release" pubdate="20130814033000" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="38">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="15565" time="0" location="/home/ben/.ivy2/cache/org.apache.directory.api/api-asn1-api/ivy-1.0.0-M20.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/directory/api/api-asn1-api/1.0.0-M20/api-asn1-api-1.0.0-M20.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0-M20" rev-constraint-default="1.0.0-M20" rev-constraint-dynamic="1.0.0-M20" callerrev="1.0.3"/>
@@ -2433,7 +2445,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.directory.server" name="apacheds-i18n">
-			<revision name="2.0.0-M15" status="release" pubdate="20130814095100" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="17">
+			<revision name="2.0.0-M15" status="release" pubdate="20130814095100" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="18">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="25493" time="0" location="/home/ben/.ivy2/cache/org.apache.directory.server/apacheds-i18n/ivy-2.0.0-M15.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/directory/server/apacheds-i18n/2.0.0-M15/apacheds-i18n-2.0.0-M15.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.0.0-M15" rev-constraint-default="2.0.0-M15" rev-constraint-dynamic="2.0.0-M15" callerrev="1.0.3"/>
@@ -2445,7 +2457,7 @@
 			</revision>
 		</module>
 		<module organisation="org.codehaus.jackson" name="jackson-mapper-asl">
-			<revision name="1.9.13" status="release" pubdate="20130714220750" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="75">
+			<revision name="1.9.13" status="release" pubdate="20130714220750" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="76">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="2787" time="0" location="/home/ben/.ivy2/cache/org.codehaus.jackson/jackson-mapper-asl/ivy-1.9.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.0.3"/>
@@ -2457,7 +2469,7 @@
 			</revision>
 		</module>
 		<module organisation="org.codehaus.jackson" name="jackson-core-asl">
-			<revision name="1.9.13" status="release" pubdate="20130714220730" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="21">
+			<revision name="1.9.13" status="release" pubdate="20130714220730" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jackson.codehaus.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="22">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="2564" time="0" location="/home/ben/.ivy2/cache/org.codehaus.jackson/jackson-core-asl/ivy-1.9.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.9.13" rev-constraint-default="1.9.13" rev-constraint-dynamic="1.9.13" callerrev="1.0.3"/>
@@ -2493,7 +2505,7 @@
 			</revision>
 		</module>
 		<module organisation="commons-beanutils" name="commons-beanutils">
-			<revision name="1.7.0" status="release" pubdate="20051108162021" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="42">
+			<revision name="1.7.0" status="release" pubdate="20051108162021" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="43">
 				<metadata-artifact status="no" details="" size="2520" time="0" location="/home/ben/.ivy2/cache/commons-beanutils/commons-beanutils/ivy-1.7.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.7.0" rev-constraint-default="1.7.0" rev-constraint-dynamic="1.7.0" callerrev="1.0.3"/>
 				<artifacts>
@@ -2504,7 +2516,7 @@
 			</revision>
 		</module>
 		<module organisation="commons-lang" name="commons-lang">
-			<revision name="2.6" status="release" pubdate="20110116162147" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/lang/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="46">
+			<revision name="2.6" status="release" pubdate="20110116162147" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/lang/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="47">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="6637" time="0" location="/home/ben/.ivy2/cache/commons-lang/commons-lang/ivy-2.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6" rev-constraint-default="2.6" rev-constraint-dynamic="2.6" callerrev="1.0.3"/>
@@ -2516,7 +2528,7 @@
 			</revision>
 		</module>
 		<module organisation="org.mortbay.jetty" name="jetty-util">
-			<revision name="6.1.26" status="release" pubdate="20101110153810" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="85">
+			<revision name="6.1.26" status="release" pubdate="20101110153810" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="86">
 				<license name="Apache Software License - Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<license name="Eclipse Public License - Version 1.0" url="http://www.eclipse.org/org/documents/epl-v10.php"/>
 				<metadata-artifact status="no" details="" size="6784" time="0" location="/home/ben/.ivy2/cache/org.mortbay.jetty/jetty-util/ivy-6.1.26.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/mortbay/jetty/jetty-util/6.1.26/jetty-util-6.1.26.pom"/>
@@ -2541,7 +2553,7 @@
 			</revision>
 		</module>
 		<module organisation="commons-httpclient" name="commons-httpclient">
-			<revision name="3.1" status="release" pubdate="20070821084407" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jakarta.apache.org/httpcomponents/httpclient-3.x/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="196">
+			<revision name="3.1" status="release" pubdate="20070821084407" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jakarta.apache.org/httpcomponents/httpclient-3.x/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="198">
 				<license name="Apache License" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="3297" time="0" location="/home/ben/.ivy2/cache/commons-httpclient/commons-httpclient/ivy-3.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.1" rev-constraint-default="3.1" rev-constraint-dynamic="3.1" callerrev="1.0.3"/>
@@ -2553,7 +2565,7 @@
 			</revision>
 		</module>
 		<module organisation="commons-cli" name="commons-cli">
-			<revision name="1.2" status="release" pubdate="20090319150832" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/cli/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="209">
+			<revision name="1.2" status="release" pubdate="20090319150832" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/cli/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="210">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="4697" time="0" location="/home/ben/.ivy2/cache/commons-cli/commons-cli/ivy-1.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.2" rev-constraint-default="1.2" rev-constraint-dynamic="1.2" callerrev="1.0.3"/>
@@ -2565,7 +2577,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-annotations">
-			<revision name="2.6.5" status="release" pubdate="20161002180538" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="205">
+			<revision name="2.6.5" status="release" pubdate="20161002180538" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="206">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="28597" time="0" location="/home/ben/.ivy2/cache/org.apache.hadoop/hadoop-annotations/ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-annotations/2.6.5/hadoop-annotations-2.6.5.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="1.0.3"/>
@@ -2579,7 +2591,7 @@
 		<module organisation="org.apache.spark" name="spark-network-shuffle_2.11">
 			<revision name="2.2.0" status="release" pubdate="20170630194036" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="4226" time="76" location="/home/ben/.ivy2/cache/org.apache.spark/spark-network-shuffle_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-network-shuffle_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.11/2.2.0/spark-network-shuffle_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="4226" time="85" location="/home/ben/.ivy2/cache/org.apache.spark/spark-network-shuffle_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-network-shuffle_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.11/2.2.0/spark-network-shuffle_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-network-shuffle_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="42555" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-network-shuffle_2.11/srcs/spark-network-shuffle_2.11-2.2.0-sources.jar">
@@ -2589,7 +2601,7 @@
 			</revision>
 		</module>
 		<module organisation="io.dropwizard.metrics" name="metrics-core">
-			<revision name="3.1.2" status="release" pubdate="20150425225901" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="192">
+			<revision name="3.1.2" status="release" pubdate="20150425225901" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="194">
 				<license name="Apache License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
 				<metadata-artifact status="no" details="" size="5135" time="0" location="/home/ben/.ivy2/cache/io.dropwizard.metrics/metrics-core/ivy-3.1.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/dropwizard/metrics/metrics-core/3.1.2/metrics-core-3.1.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.1.2" rev-constraint-default="3.1.2" rev-constraint-dynamic="3.1.2" callerrev="1.0.3"/>
@@ -2603,7 +2615,7 @@
 		<module organisation="org.apache.spark" name="spark-network-common_2.11">
 			<revision name="2.2.0" status="release" pubdate="20170630193419" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="223">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="5486" time="61" location="/home/ben/.ivy2/cache/org.apache.spark/spark-network-common_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-network-common_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.11/2.2.0/spark-network-common_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="5486" time="73" location="/home/ben/.ivy2/cache/org.apache.spark/spark-network-common_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-network-common_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.11/2.2.0/spark-network-common_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-network-common_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="132914" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-network-common_2.11/srcs/spark-network-common_2.11-2.2.0-sources.jar">
@@ -2613,7 +2625,7 @@
 			</revision>
 		</module>
 		<module organisation="org.slf4j" name="slf4j-log4j12">
-			<revision name="1.7.16" status="release" pubdate="20160211142635" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="245">
+			<revision name="1.7.16" status="release" pubdate="20160211142635" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="246">
 				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
 				<metadata-artifact status="no" details="" size="5276" time="0" location="/home/ben/.ivy2/cache/org.slf4j/slf4j-log4j12/ivy-1.7.16.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/slf4j/slf4j-log4j12/1.7.16/slf4j-log4j12-1.7.16.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.7.16" rev-constraint-default="1.7.16" rev-constraint-dynamic="1.7.16" callerrev="1.0.3"/>
@@ -2661,7 +2673,7 @@
 			</revision>
 		</module>
 		<module organisation="org.fusesource.leveldbjni" name="leveldbjni-all">
-			<revision name="1.8" status="release" pubdate="20131017081826" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="67">
+			<revision name="1.8" status="release" pubdate="20131017081826" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="68">
 				<license name="The BSD 3-Clause License" url="http://www.opensource.org/licenses/BSD-3-Clause"/>
 				<metadata-artifact status="no" details="" size="4642" time="0" location="/home/ben/.ivy2/cache/org.fusesource.leveldbjni/leveldbjni-all/ivy-1.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.8" rev-constraint-default="1.8" rev-constraint-dynamic="1.8" callerrev="1.0.3"/>
@@ -2673,7 +2685,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.commons" name="commons-lang3">
-			<revision name="3.5" status="release" pubdate="20161013145341" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-lang/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="65">
+			<revision name="3.5" status="release" pubdate="20161013145341" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-lang/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="66">
 				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="12365" time="0" location="/home/ben/.ivy2/cache/org.apache.commons/commons-lang3/ivy-3.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="3.5" rev-constraint-default="3.5" rev-constraint-dynamic="3.5" callerrev="1.0.3"/>
@@ -2685,7 +2697,7 @@
 			</revision>
 		</module>
 		<module organisation="io.netty" name="netty-all">
-			<revision name="4.0.43.Final" status="release" pubdate="20170112070234" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="66">
+			<revision name="4.0.43.Final" status="release" pubdate="20170112070234" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="67">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
 				<metadata-artifact status="no" details="" size="17819" time="0" location="/home/ben/.ivy2/cache/io.netty/netty-all/ivy-4.0.43.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-all/4.0.43.Final/netty-all-4.0.43.Final.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="4.0.43.Final" rev-constraint-default="4.0.43.Final" rev-constraint-dynamic="4.0.43.Final" callerrev="1.0.3"/>
@@ -2709,7 +2721,7 @@
 			</revision>
 		</module>
 		<module organisation="oro" name="oro">
-			<revision name="2.0.8" status="release" pubdate="20051108162901" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="22">
+			<revision name="2.0.8" status="release" pubdate="20051108162901" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="23">
 				<metadata-artifact status="no" details="" size="2296" time="0" location="/home/ben/.ivy2/cache/oro/oro/ivy-2.0.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/oro/oro/2.0.8/oro-2.0.8.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.0.8" rev-constraint-default="2.0.8" rev-constraint-dynamic="2.0.8" callerrev="1.0.3"/>
 				<artifacts>
@@ -2720,7 +2732,7 @@
 			</revision>
 		</module>
 		<module organisation="com.google.protobuf" name="protobuf-java">
-			<revision name="2.5.0" status="release" pubdate="20130307181811" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://code.google.com/p/protobuf" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="69">
+			<revision name="2.5.0" status="release" pubdate="20130307181811" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://code.google.com/p/protobuf" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="70">
 				<license name="New BSD license" url="http://www.opensource.org/licenses/bsd-license.php"/>
 				<metadata-artifact status="no" details="" size="3139" time="0" location="/home/ben/.ivy2/cache/com.google.protobuf/protobuf-java/ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="1.0.3"/>
@@ -2756,9 +2768,9 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.spark" name="spark-mllib-local_2.11">
-			<revision name="2.2.0" status="release" pubdate="20170630193014" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spark.apache.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="3">
+			<revision name="2.2.0" status="release" pubdate="20170630193014" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="3">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="no" details="" size="73604" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-mllib-local_2.11/ivy-2.2.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-mllib-local_2.11/2.2.0/spark-mllib-local_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="4273" time="128" location="/home/ben/.ivy2/cache/org.apache.spark/spark-mllib-local_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-mllib-local_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-mllib-local_2.11/2.2.0/spark-mllib-local_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-mllib-local_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="30836" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-mllib-local_2.11/srcs/spark-mllib-local_2.11-2.2.0-sources.jar">
@@ -2768,9 +2780,9 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.spark" name="spark-tags_2.11">
-			<revision name="2.2.0" status="release" pubdate="20170630193509" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="15">
+			<revision name="2.2.0" status="release" pubdate="20170630193509" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="16">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="2327" time="63" location="/home/ben/.ivy2/cache/org.apache.spark/spark-tags_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-tags_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-tags_2.11/2.2.0/spark-tags_2.11-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="2327" time="87" location="/home/ben/.ivy2/cache/org.apache.spark/spark-tags_2.11/ivy-2.2.0.xml" searched="true" original-local-location="/home/ben/.ivy2/cache/org.apache.spark/spark-tags_2.11/ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-tags_2.11/2.2.0/spark-tags_2.11-2.2.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0.3"/>
 				<artifacts>
 					<artifact name="spark-tags_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="14746" time="0" location="/home/ben/.ivy2/cache/org.apache.spark/spark-tags_2.11/srcs/spark-tags_2.11-2.2.0-sources.jar">
@@ -2780,7 +2792,7 @@
 			</revision>
 		</module>
 		<module organisation="org.spark-project.spark" name="unused">
-			<revision name="1.0.0" status="release" pubdate="20141022020005" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="198">
+			<revision name="1.0.0" status="release" pubdate="20141022020005" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="200">
 				<license name="The Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="2975" time="0" location="/home/ben/.ivy2/cache/org.spark-project.spark/unused/ivy-1.0.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/spark-project/spark/unused/1.0.0/unused-1.0.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.0.3"/>
@@ -2828,7 +2840,7 @@
 			</revision>
 		</module>
 		<module organisation="org.spire-math" name="spire-macros_2.11">
-			<revision name="0.13.0" status="release" pubdate="20161128223012" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spire-math.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="81">
+			<revision name="0.13.0" status="release" pubdate="20161128223012" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spire-math.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="82">
 				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
 				<metadata-artifact status="no" details="" size="3294" time="0" location="/home/ben/.ivy2/cache/org.spire-math/spire-macros_2.11/ivy-0.13.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/spire-math/spire-macros_2.11/0.13.0/spire-macros_2.11-0.13.0.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="0.13.0" rev-constraint-default="0.13.0" rev-constraint-dynamic="0.13.0" callerrev="1.0.3"/>
@@ -2864,7 +2876,7 @@
 			</revision>
 		</module>
 		<module organisation="org.typelevel" name="machinist_2.11">
-			<revision name="0.6.1" status="release" pubdate="20161029101411" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/typelevel/machinist" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="64">
+			<revision name="0.6.1" status="release" pubdate="20161029101411" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/typelevel/machinist" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="65">
 				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
 				<metadata-artifact status="no" details="" size="2785" time="0" location="/home/ben/.ivy2/cache/org.typelevel/machinist_2.11/ivy-0.6.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/machinist_2.11/0.6.1/machinist_2.11-0.6.1.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="0.6.1" rev-constraint-default="0.6.1" rev-constraint-dynamic="0.6.1" callerrev="1.0.3"/>
@@ -2890,7 +2902,7 @@
 			</revision>
 		</module>
 		<module organisation="net.sf.opencsv" name="opencsv">
-			<revision name="2.3" status="release" pubdate="20110728000018" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://opencsv.sf.net" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="59">
+			<revision name="2.3" status="release" pubdate="20110728000018" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://opencsv.sf.net" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="60">
 				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="3354" time="0" location="/home/ben/.ivy2/cache/net.sf.opencsv/opencsv/ivy-2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/sf/opencsv/opencsv/2.3/opencsv-2.3.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="2.3" rev-constraint-default="2.3" rev-constraint-dynamic="2.3" callerrev="1.0.3"/>
@@ -2902,7 +2914,7 @@
 			</revision>
 		</module>
 		<module organisation="com.github.fommil.netlib" name="core">
-			<revision name="1.1.2" status="release" pubdate="20131126055411" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="86">
+			<revision name="1.1.2" status="release" pubdate="20131126055411" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="87">
 				<license name="BSD 3 Clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
 				<metadata-artifact status="no" details="" size="4893" time="0" location="/home/ben/.ivy2/cache/com.github.fommil.netlib/core/ivy-1.1.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/fommil/netlib/core/1.1.2/core-1.1.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.1.2" rev-constraint-default="1.1.2" rev-constraint-dynamic="1.1.2" callerrev="1.0.3"/>
@@ -2938,7 +2950,7 @@
 			</revision>
 		</module>
 		<module organisation="com.nativelibs4java" name="scalaxy-streams_2.11">
-			<revision name="0.3.4" status="release" pubdate="20141103184646" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/ochafik/Scalaxy" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="72">
+			<revision name="0.3.4" status="release" pubdate="20141103184646" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/ochafik/Scalaxy" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="73">
 				<license name="BSD-3-Clause" url="http://www.opensource.org/licenses/BSD-3-Clause"/>
 				<metadata-artifact status="no" details="" size="3203" time="0" location="/home/ben/.ivy2/cache/com.nativelibs4java/scalaxy-streams_2.11/ivy-0.3.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/nativelibs4java/scalaxy-streams_2.11/0.3.4/scalaxy-streams_2.11-0.3.4.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="0.3.4" rev-constraint-default="0.3.4" rev-constraint-dynamic="0.3.4" callerrev="1.0.3"/>
@@ -2974,7 +2986,7 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.parquet" name="parquet-jackson">
-			<revision name="1.8.2" status="release" pubdate="20170118193020" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://parquet.apache.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="19">
+			<revision name="1.8.2" status="release" pubdate="20170118193020" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://parquet.apache.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="20">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="7134" time="0" location="/home/ben/.ivy2/cache/org.apache.parquet/parquet-jackson/ivy-1.8.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/parquet/parquet-jackson/1.8.2/parquet-jackson-1.8.2.pom"/>
 				<caller organisation="com.ben.streaming" name="nsq-spark-receiver$sources" conf="compile" rev="1.8.2" rev-constraint-default="1.8.2" rev-constraint-dynamic="1.8.2" callerrev="1.0.3"/>

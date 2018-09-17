@@ -1,37 +1,29 @@
 package com.ben.streaming.spark
 
 // DL4J and ND4J
-import org.apache.spark.sql.DataFrame
-import org.apache.spark.util.AccumulatorV2
+import org.apache.spark.streaming.dstream.{DStream, ReceiverInputDStream}
 import org.deeplearning4j.nn.modelimport.keras.KerasModelImport
-import org.nd4s._
-import org.nd4j.linalg.factory.Nd4j
 import org.nd4s.Implicits._
 
-import scala.collection.mutable.Queue
-import scala.collection.mutable.ArrayBuffer
+// NSQ Specifics
+import com.sproutsocial.nsq._
 
 // Spark
 import org.apache.spark.SparkConf
-import org.apache.spark.util.AccumulatorV2
 import org.apache.spark.streaming.{Seconds, StreamingContext}
-import org.apache.spark.mllib.linalg.{Vectors, Vector}
-import org.apache.spark.rdd.RDD
-
-//import org.apache.spark.mllib.linalg.{Vector, Vectors}
 
 //Java
 import java.io.{FileWriter}
 
 // Scala
-import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.Queue
+import org.json4s._
+import org.json4s.jackson.JsonMethods._
+import scala.util.parsing.json._
+
 
 // This project
 import model._
-
-// NSQ Specifics
-//import com.github.brainlag.nsq.{NSQConfig, NSQProducer, NSQMessage}
-import com.sproutsocial.nsq._
 
 object TrafficLSTM {
 
@@ -43,6 +35,19 @@ object TrafficLSTM {
   }
 
   def parseDouble(s: String) = try { Some(s.toDouble) } catch { case _:Throwable => None }
+
+//  def parseJSONData(s: String) : (Any) = {
+//    val parsed = JSON.parseFull(s)
+//    val numbers = parsed.get.asInstanceOf[Map[String, String]].get("data")
+//    return numbers
+//  }
+//
+//  def parseJSONTime(s: String) : (Any) = {
+//    val parsed = JSON.parseFull(s)
+//    val time = parsed.get.asInstanceOf[Map[String, String]].get("time")
+//    return time
+//  }
+
 
   def execute(master: Option[String], config: SimpleAppConfig, jars: Seq[String] = Nil): StreamingContext = {
 
@@ -58,11 +63,7 @@ object TrafficLSTM {
     val outTopic = producerConf.outTopicName
     val lookupPort = producerConf.lookupPort
     val channelName = producerConf.channelName
-//    val producer = new NSQProducer()
-//    producer.addAddress(host, port)
-//    producer.start()
     var producer = new Publisher(host)
-    //producer.produce("TestTopic", ("this is a message").getBytes());
 
     val ssc = new StreamingContext(sparkConf, Seconds(config.batchDuration))
 
@@ -73,17 +74,21 @@ object TrafficLSTM {
 
     val input = ssc.receiverStream(new NsqReceiver(config.nsq))
 
-
     input.print(lag)
+
 
     // Collect the incoming stream of numbers, parse them as doubles
     val numbers = input.flatMap(_.split(" ")).filter(_.nonEmpty).map(_.toDouble)
     var collected = new Queue[Double]()
+    var time = 0.0
     numbers.foreachRDD(
       flowRDD => {
         for (item <- flowRDD.collect().toArray) {
           if (collected.length < lag) {
             collected.enqueue(item)
+          }
+          else {
+            time = item
           }
         }
 
@@ -104,11 +109,12 @@ object TrafficLSTM {
             val diff = 82 - outputed
             outputed -= diff*1.25
           }
-          println("Predicted : " + outputed.toString)
-          println("Actual : " + arr.lastOption.getOrElse(0).toString)
+//          println("Predicted : " + outputed.toString)
+//          println("Actual : " + arr.lastOption.getOrElse(0).toString)
 
-          
-          producer.publish(outTopic, (outputed.toString).getBytes());
+          val message = outputed.toString() + ";" + time.toString
+
+          producer.publish(outTopic, message.getBytes());
 
         }
 
