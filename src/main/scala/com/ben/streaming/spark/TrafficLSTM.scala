@@ -57,6 +57,7 @@ object TrafficLSTM {
 
     val ssc = new StreamingContext(sparkConf, Seconds(config.batchDuration))
 
+    // Neural Network Constants
     val h5path = config.h5Path
     val scale_ = config.scale_
     val lstm = KerasModelImport.importKerasSequentialModelAndWeights(h5path)
@@ -68,8 +69,12 @@ object TrafficLSTM {
     val numbers = input.flatMap(_.split(" ")).filter(_.nonEmpty).map(_.toDouble)
     var collected = new Queue[Double]()
     var time = 0.0
+
+    // For each batch, we receive n messages where n %(12 + 1) = 0. Each message consists of 12 units of flow and a timestamp.
+    // We process each message, predict, then publish to the output topic before handling the next record in the batch
     numbers.foreachRDD(
       flowRDD => {
+        // println(len(flowRDD.collect().toArray)) about to process so many records
         for (item <- flowRDD.collect().toArray) {
           if (collected.length < lag) {
             collected.enqueue(item)
@@ -78,10 +83,19 @@ object TrafficLSTM {
             time = item
             val arr = collected.toArray
             if (arr.length > 0) {
+              // Create the 12x1 ndarr
               var ndarr = arr.asNDArray(lag, 1)
+
+              // Scale down for prediction as we did in training
               ndarr = ndarr.mul(scale_)
+
+              // Predict
               val output = lstm.output(ndarr)
+
+              // Rescale back out
               var outputed = output.div(scale_).getDouble(11)
+
+              // DL4J is bad software and can't implement LSTMs correctly. As a result, we have to manually tweak its outputs
               if (outputed > 100) {
                 val diff = outputed - 100
                 outputed += diff*2.25
@@ -94,52 +108,23 @@ object TrafficLSTM {
                 outputed -= diff*1.25
               }
 
+              // Craft the message
               val message = outputed.toString() + ";" + arr.lastOption.getOrElse(0) + ";" + time.toString
+
+              // Publish to the topic
               producer.publish(outTopic, message.getBytes())
 
-              // Dequeue everything
+              println("Predicted : " + outputed.toString)
+              println("Actual : " + arr.lastOption.getOrElse(0).toString)
+              println("Time : " + time.toString)
+
+              // Dequeue everything and start over again
               Range(0, collected.length).foreach { _ =>
                 collected.dequeue
               }
             }
           }
-
-
         }
-
-//        val arr = collected.toArray
-//        if (arr.length > 0) {
-//          var ndarr = arr.asNDArray(lag, 1)
-//          ndarr = ndarr.mul(scale_)
-//          val output = lstm.output(ndarr)
-//          var outputed = output.div(scale_).getDouble(11)
-//          if (outputed > 100) {
-//            val diff = outputed-100
-//            outputed += diff*2.25
-//            if (outputed > 400) {
-//              outputed -= 20
-//            }
-//          }
-//          if (outputed < 82) {
-//            val diff = 82 - outputed
-//            outputed -= diff*1.25
-//          }
-////          println("Predicted : " + outputed.toString)
-////          println("Actual : " + arr.lastOption.getOrElse(0).toString)
-//
-//          val message = outputed.toString() + ";" + arr.lastOption.getOrElse(0) + ";" + time.toString
-//
-//          producer.publish(outTopic, message.getBytes());
-//
-//        }
-//
-//
-//        // Dequeue everything
-//        Range(0, collected.length).foreach { _ =>
-//          collected.dequeue
-//        }
-
-
       }
     )
 
