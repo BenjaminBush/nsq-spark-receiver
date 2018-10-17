@@ -1,7 +1,0 @@
-[0m[[0m[33mwarn[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala:40:18: object JSON in package json is deprecated: This object will be removed.[0m
-[0m[[0m[33mwarn[0m] [0m[0m    val parsed = JSON.parseFull(s)[0m
-[0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/home/ben/git/nsq-spark-receiver/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala:46:18: object JSON in package json is deprecated: This object will be removed.[0m
-[0m[[0m[33mwarn[0m] [0m[0m    val parsed = JSON.parseFull(s)[0m
-[0m[[0m[33mwarn[0m] [0m[0m                 ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
