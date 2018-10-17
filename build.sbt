@@ -1,7 +1,7 @@
 lazy val root = project.in(file("."))
   .settings(
     name        := "nsq-spark-receiver",
-    version     := "1.0.3",
+    version     := "1.0.4",
     description := "Project for NSQ-Spark integration"
   )
   .settings(BuildSettings.buildSettings)

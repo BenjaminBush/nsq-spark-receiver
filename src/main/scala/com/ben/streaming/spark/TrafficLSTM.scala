@@ -5,6 +5,8 @@ import org.apache.spark.streaming.dstream.{DStream, ReceiverInputDStream}
 import org.deeplearning4j.nn.modelimport.keras.KerasModelImport
 import org.nd4s.Implicits._
 
+import scala.collection.mutable.ArrayBuffer
+
 // NSQ Specifics
 import com.sproutsocial.nsq._
 
@@ -36,18 +38,6 @@ object TrafficLSTM {
 
   def parseDouble(s: String) = try { Some(s.toDouble) } catch { case _:Throwable => None }
 
-//  def parseJSONData(s: String) : (Any) = {
-//    val parsed = JSON.parseFull(s)
-//    val numbers = parsed.get.asInstanceOf[Map[String, String]].get("data")
-//    return numbers
-//  }
-//
-//  def parseJSONTime(s: String) : (Any) = {
-//    val parsed = JSON.parseFull(s)
-//    val time = parsed.get.asInstanceOf[Map[String, String]].get("time")
-//    return time
-//  }
-
 
   def execute(master: Option[String], config: SimpleAppConfig, jars: Seq[String] = Nil): StreamingContext = {
 
@@ -74,9 +64,6 @@ object TrafficLSTM {
 
     val input = ssc.receiverStream(new NsqReceiver(config.nsq))
 
-    input.print(lag)
-
-
     // Collect the incoming stream of numbers, parse them as doubles
     val numbers = input.flatMap(_.split(" ")).filter(_.nonEmpty).map(_.toDouble)
     var collected = new Queue[Double]()
@@ -89,40 +76,68 @@ object TrafficLSTM {
           }
           else {
             time = item
-          }
-        }
+            val arr = collected.toArray
+            if (arr.length > 0) {
+              var ndarr = arr.asNDArray(lag, 1)
+              ndarr = ndarr.mul(scale_)
+              val output = lstm.output(ndarr)
+              var outputed = output.div(scale_).getDouble(11)
+              if (outputed > 100) {
+                val diff = outputed - 100
+                outputed += diff*2.25
+                if (outputed > 400) {
+                  outputed -= 20
+                }
+              }
+              if (outputed < 82) {
+                val diff = 82 - outputed
+                outputed -= diff*1.25
+              }
 
-        val arr = collected.toArray
-        if (arr.length > 0) {
-          val ndarr = arr.asNDArray(lag, 1)
-          val ndarr1 = ndarr.mul(scale_)
-          val output = lstm.output(ndarr1)
-          var outputed = output.div(scale_).getDouble(11)
-          if (outputed > 100) {
-            val diff = outputed-100
-            outputed += diff*2.25
-            if (outputed > 400) {
-              outputed -= 20
+              val message = outputed.toString() + ";" + arr.lastOption.getOrElse(0) + ";" + time.toString
+              producer.publish(outTopic, message.getBytes())
+
+              // Dequeue everything
+              Range(0, collected.length).foreach { _ =>
+                collected.dequeue
+              }
             }
           }
-          if (outputed < 82) {
-            val diff = 82 - outputed
-            outputed -= diff*1.25
-          }
-//          println("Predicted : " + outputed.toString)
-//          println("Actual : " + arr.lastOption.getOrElse(0).toString)
 
-          val message = outputed.toString() + ";" + time.toString
-
-          producer.publish(outTopic, message.getBytes());
 
         }
 
-
-        // Dequeue everything
-        Range(0, collected.length).foreach { _ =>
-          collected.dequeue
-        }
+//        val arr = collected.toArray
+//        if (arr.length > 0) {
+//          var ndarr = arr.asNDArray(lag, 1)
+//          ndarr = ndarr.mul(scale_)
+//          val output = lstm.output(ndarr)
+//          var outputed = output.div(scale_).getDouble(11)
+//          if (outputed > 100) {
+//            val diff = outputed-100
+//            outputed += diff*2.25
+//            if (outputed > 400) {
+//              outputed -= 20
+//            }
+//          }
+//          if (outputed < 82) {
+//            val diff = 82 - outputed
+//            outputed -= diff*1.25
+//          }
+////          println("Predicted : " + outputed.toString)
+////          println("Actual : " + arr.lastOption.getOrElse(0).toString)
+//
+//          val message = outputed.toString() + ";" + arr.lastOption.getOrElse(0) + ";" + time.toString
+//
+//          producer.publish(outTopic, message.getBytes());
+//
+//        }
+//
+//
+//        // Dequeue everything
+//        Range(0, collected.length).foreach { _ =>
+//          collected.dequeue
+//        }
 
 
       }

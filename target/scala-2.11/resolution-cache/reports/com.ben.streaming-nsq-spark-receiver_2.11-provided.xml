@@ -4,10 +4,10 @@
 	<info
 		organisation="com.ben.streaming"
 		module="nsq-spark-receiver_2.11"
-		revision="1.0.3"
+		revision="1.0.4"
 		conf="provided"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20180917090805"/>
+		date="20180921145233"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>
