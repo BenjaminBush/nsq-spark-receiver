@@ -1,14 +1,17 @@
 package com.ben.streaming.spark
 
 // DL4J and ND4J
-import org.apache.spark.streaming.dstream.{DStream, ReceiverInputDStream}
+import org.apache.kafka.clients.consumer.ConsumerRecord
+import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
+import org.apache.kafka.common.serialization.StringDeserializer
 import org.deeplearning4j.nn.modelimport.keras.KerasModelImport
 import org.nd4s.Implicits._
 
-import scala.collection.mutable.ArrayBuffer
 
-// NSQ Specifics
-import com.sproutsocial.nsq._
+// Kafka Specifics
+import org.apache.spark.streaming.kafka010._
+import org.apache.spark.streaming.kafka010.LocationStrategies.PreferConsistent
+import org.apache.spark.streaming.kafka010.ConsumerStrategies.Subscribe
 
 // Spark
 import org.apache.spark.SparkConf
@@ -17,6 +20,7 @@ import org.apache.spark.sql.streaming.ProcessingTime
 
 //Java
 import java.io.{FileWriter}
+import java.util.Properties
 
 // Scala
 import scala.collection.mutable.Queue
@@ -47,29 +51,49 @@ object TrafficLSTM {
       sparkConf.setMaster(m)
     }
 
-    // Producer settings
-    val producerConf = config.producer
-    val host = producerConf.host
-    val port = producerConf.port
-    val outTopic = producerConf.outTopicName
-    val lookupPort = producerConf.lookupPort
-    val channelName = producerConf.channelName
-    var producer = new Publisher(host)
-
-    val ssc = new StreamingContext(sparkConf, Seconds(config.batchDuration))
-
     // Neural Network Constants
     val h5path = config.h5Path
     val scale_ = config.scale_
     val lstm = KerasModelImport.importKerasSequentialModelAndWeights(h5path)
     val lag = 12
 
-    val input = ssc.receiverStream(new NsqReceiver(config.nsq))
+    val kafkaParams = Map[String, Object](
+      "bootstrap.servers" -> "localhost:9092",
+      "key.deserializer" -> classOf[StringDeserializer],
+      "value.deserializer" -> classOf[StringDeserializer],
+      "group.id" -> "test-group",
+      "auto.offset.reset" -> "latest",
+      "enable.auto.commit" -> (false: java.lang.Boolean)
+    )
 
-    // Collect the incoming stream of numbers, parse them as doubles
-    val numbers = input.flatMap(_.split(" ")).filter(_.nonEmpty).map(_.toDouble)
+    val producerConfig = new Properties();
+    producerConfig.put("bootstrap.servers", "localhost:9092")
+    producerConfig.put("acks", "all")
+    producerConfig.put("retries", "0")
+    producerConfig.put("batch.size", "16384")
+    producerConfig.put("buffer.memory", "33554432")
+    producerConfig.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+    producerConfig.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+
+    val producer = new KafkaProducer[String, String](producerConfig)
+
+    val output_topic = "output"
+    val input_topics = List("input")
+
+    val ssc = new StreamingContext(sparkConf, Seconds(config.batchDuration))
+
+    val stream = KafkaUtils.createDirectStream[String, String](
+      ssc,
+      PreferConsistent,
+      Subscribe[String, String](input_topics, kafkaParams)
+    )
+
+
+    val numbers = stream.map(record => record.value).flatMap(_.split(";")).filter(_.nonEmpty).map(_.toDouble)
     var collected = new Queue[Double]()
     var time = 0.0
+    var i = 0
+    var predicted_flow = 0.0
 
     // For each batch, we receive n messages where n %(12 + 1) = 0. Each message consists of 12 units of flow and a timestamp.
     // We process each message, predict, then publish to the output topic before handling the next record in the batch
@@ -79,9 +103,15 @@ object TrafficLSTM {
         for (item <- flowRDD.collect().toArray) {
           if (collected.length < lag) {
             collected.enqueue(item)
+            i += 1
+          }
+          else if (i == 12) {
+            predicted_flow = item
+            i += 1
           }
           else {
             time = item
+            i = 0
             val arr = collected.toArray
             if (arr.length > 0) {
               // Create the 12x1 ndarr
@@ -109,11 +139,18 @@ object TrafficLSTM {
                 outputed -= diff*1.25
               }
 
+              var original_flows = ""
+              for (elem <- arr) {
+                original_flows += elem.toString
+                original_flows += ";"
+              }
+
               // Craft the message
-              val message = outputed.toString() + ";" + arr.lastOption.getOrElse(0) + ";" + time.toString
+              val message = original_flows + outputed.toString() + ";" + time.toString
 
               // Publish to the topic
-              producer.publish(outTopic, message.getBytes())
+              //producer.publish(outTopic, message.getBytes())
+              producer.send(new ProducerRecord[String, String](output_topic, message))
 
               println("Predicted : " + outputed.toString)
               println("Actual : " + arr.lastOption.getOrElse(0).toString)

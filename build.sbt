@@ -18,7 +18,8 @@ lazy val root = project.in(file("."))
       Dependencies.Libraries.nd4jNative,
       Dependencies.Libraries.nd4jNativePlatform,
       Dependencies.Libraries.nd4s,
-      Dependencies.Libraries.json4sNative
+      Dependencies.Libraries.json4sNative,
+      Dependencies.Libraries.kafkaSpark
     )
   )
 
