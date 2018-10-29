@@ -13,6 +13,7 @@ import com.sproutsocial.nsq._
 // Spark
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.{Seconds, StreamingContext}
+import org.apache.spark.sql.streaming.ProcessingTime
 
 //Java
 import java.io.{FileWriter}
