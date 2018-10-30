@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08dfe8bf-d337-4745-b6b6-24753a381b80" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/nsq-spark-receiver.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/nsq-spark-receiver.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/project/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project/target/streams/compile/copyResources/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/project/target/streams/compile/copyResources/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/model.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/model.scala" afterDir="false" />
-    </list>
+    <list default="true" id="08dfe8bf-d337-4745-b6b6-24753a381b80" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -48,7 +38,7 @@
     <session id="-304279160">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="3" />
@@ -99,11 +89,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="812">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
               <folding>
                 <element signature="e#50#105#0" expanded="true" />
               </folding>
@@ -115,15 +105,15 @@
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="624">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/model.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
+            <state relative-caret-position="886">
               <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
             </state>
           </provider>
@@ -421,9 +411,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1667" y="35" width="1533" height="1765" extended-state="4" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.39307958" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.39307958" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -432,7 +421,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49764943" visible="true" weight="0.32932532" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49764943" weight="0.32932532" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -598,27 +587,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/model.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/TrafficLSTMJob.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/TrafficLSTM.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="812">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
           <folding>
             <element signature="e#50#105#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/ben/streaming/spark/model.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="886">
+          <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
         </state>
       </provider>
     </entry>
