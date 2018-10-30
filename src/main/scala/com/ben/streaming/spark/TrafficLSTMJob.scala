@@ -17,7 +17,7 @@ object TrafficLSTMJob {
 
     case class FileConfig(config: File = new File("."))
     val parser = new scopt.OptionParser[FileConfig]("nsq-spark-receiver") {
-      head("nsq-spark-receiver", "1.0.3")
+      head("nsq-spark-receiver", "1.0.4")
       opt[File]("config").required().valueName("<filename>")
         .action((f: File, c: FileConfig) => c.copy(f))
         .validate(f =>
@@ -37,7 +37,8 @@ object TrafficLSTMJob {
       System.exit(1)
     }
 
-    val config = SimpleAppConfig(conf)
+    //val config = SimpleAppConfig(conf)
+    val config = KafkaAppConfig(conf)
 
     val ssc = TrafficLSTM.execute(
       master = None,

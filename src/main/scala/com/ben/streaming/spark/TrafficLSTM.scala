@@ -44,41 +44,48 @@ object TrafficLSTM {
   def parseDouble(s: String) = try { Some(s.toDouble) } catch { case _:Throwable => None }
 
 
-  def execute(master: Option[String], config: SimpleAppConfig, jars: Seq[String] = Nil): StreamingContext = {
+  def execute(master: Option[String], config: KafkaAppConfig, jars: Seq[String] = Nil): StreamingContext = {
 
     val sparkConf = new SparkConf().setAppName(config.appName).setJars(jars)
     for (m <- master) {
       sparkConf.setMaster(m)
     }
 
-    // Neural Network Constants
+    // Kafka config options
+    val consumerConf = config.consumerConfig
+    val producerConf = config.producerConfig
+    val consumer_topic = config.consumer_topic
+    val producer_topic = config.producer_topic
+
+    // Neural Network config options
     val h5path = config.h5Path
     val scale_ = config.scale_
     val lstm = KerasModelImport.importKerasSequentialModelAndWeights(h5path)
     val lag = 12
 
+
     val kafkaParams = Map[String, Object](
-      "bootstrap.servers" -> "localhost:9092",
-      "key.deserializer" -> classOf[StringDeserializer],
-      "value.deserializer" -> classOf[StringDeserializer],
-      "group.id" -> "test-group",
-      "auto.offset.reset" -> "latest",
+      "bootstrap.servers" -> consumerConf.bootstrap_servers,
+      "key.deserializer" -> consumerConf.key_deserializer,
+      "value.deserializer" -> consumerConf.value_deserializer,
+      "group.id" -> consumerConf.group_id,
+      "auto.offset.reset" -> consumerConf.auto_offset_reset,
       "enable.auto.commit" -> (false: java.lang.Boolean)
     )
 
     val producerConfig = new Properties();
-    producerConfig.put("bootstrap.servers", "localhost:9092")
-    producerConfig.put("acks", "all")
-    producerConfig.put("retries", "0")
-    producerConfig.put("batch.size", "16384")
-    producerConfig.put("buffer.memory", "33554432")
-    producerConfig.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
-    producerConfig.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer")
+    producerConfig.put("bootstrap.servers", producerConf.bootstrap_servers)
+    producerConfig.put("acks", producerConf.acks)
+    producerConfig.put("retries", producerConf.retries)
+    producerConfig.put("batch.size", producerConf.batch_size)
+    producerConfig.put("buffer.memory", producerConf.buffer_memory)
+    producerConfig.put("key.serializer", producerConf.key_serializer)
+    producerConfig.put("value.serializer", producerConf.value_serializer)
 
     val producer = new KafkaProducer[String, String](producerConfig)
 
-    val output_topic = "output"
-    val input_topics = List("input")
+    val output_topic = producer_topic
+    val input_topics = List(consumer_topic)
 
     val ssc = new StreamingContext(sparkConf, Seconds(config.batchDuration))
 
@@ -87,7 +94,6 @@ object TrafficLSTM {
       PreferConsistent,
       Subscribe[String, String](input_topics, kafkaParams)
     )
-
 
     val numbers = stream.map(record => record.value).flatMap(_.split(";")).filter(_.nonEmpty).map(_.toDouble)
     var collected = new Queue[Double]()
